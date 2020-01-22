@@ -1,0 +1,17 @@
+.icon-container {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+img {
+  max-height: 200px;
+    margin: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+li {
+    list-style: none;
+}
