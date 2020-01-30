@@ -18,6 +18,7 @@ import { InfoComponent } from './pages/info/info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { SectionNameComponent } from './components/section-name/section-name.component';
+import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle-btn.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SectionNameComponent } from './components/section-name/section-name.com
     NavbarComponent,
     AddWindowsComponent,
     InfoComponent,
-    SectionNameComponent
+    SectionNameComponent,
+    MenuCircleBtnComponent
   ],
   imports: [
     MaterialModule,

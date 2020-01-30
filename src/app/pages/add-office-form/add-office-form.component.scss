@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+:host {
+    @include content-layout;
+}
+.add-office-form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    margin: 10px;
+}
+mat-form-field, .send-btn {
+    width: 50%;
+    margin: 3px 0;
+}

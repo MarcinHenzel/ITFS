@@ -11,6 +11,11 @@ html {
     font-family: Helvetica, sans-serif;
     background-color: rgb(230, 230, 230);
 }
+@mixin content-layout {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

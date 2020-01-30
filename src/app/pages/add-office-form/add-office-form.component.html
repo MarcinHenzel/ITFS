@@ -1,1 +1,25 @@
-<p>add-office-form works!</p>
+
+<app-section-name>Add office</app-section-name>
+<form class="add-office-form" action="">
+  <mat-form-field>
+    <input matInput name="pcName" placeholder="Pc name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="productName" placeholder="Product name">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput name="productKey" placeholder="Product's key">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput name="registerMail" placeholder="Register mail">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput type="date" name="activationDate" placeholder="Activation date">
+  </mat-form-field>
+  <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
+</form>
+<div class="server-answer-container">Server Answer</div>

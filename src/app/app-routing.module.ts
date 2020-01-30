@@ -1,3 +1,4 @@
+import { InfoComponent } from './pages/info/info.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:'search-car', component: SearchCarComponent},
   {path:'dist-car', component: DistCarFormComponent},
   {path:'alarm', component: AlarmComponent},
+  {path:'info', component: InfoComponent},
 ];
 
 @NgModule({

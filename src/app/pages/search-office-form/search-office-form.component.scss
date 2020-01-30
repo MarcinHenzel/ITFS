@@ -1,0 +1,8 @@
+@import "../../../styles.scss";
+
+:host {
+    @include content-layout;
+}
+.table-container {
+  width: 90%;
+}

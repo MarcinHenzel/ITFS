@@ -1,20 +1,8 @@
 @import "../../../styles.scss";
 
 :host {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    @include content-layout;
 }
-
-.section-name {
-  width: 100%;
-  box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.226);
-  text-align: center;
-  font-size: 3rem;
-  padding: 3px 0;
-  letter-spacing: 3px;
-}
-
 .comunique-form {
   margin-top: 50px;
   border: 1px solid rgb(119, 119, 119);
@@ -30,7 +18,7 @@
   font-size: 1rem;
 }
 
-::ng-deep .mat-form-field-label-wrapper {
+:host ::ng-deep .mat-form-field-label-wrapper {
   font-size: 25px;
 }
 
