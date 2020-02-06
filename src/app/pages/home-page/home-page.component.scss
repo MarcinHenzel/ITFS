@@ -1,17 +1,35 @@
+@import "../../../styles.scss";
+
 .icon-container {
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-img {
-  max-height: 200px;
-    margin: 10px;
+.font-icon {
+  font-size: 4rem;
+}
+app-menu-circle-btn {
+  margin: 5px;
+  color: white;
+  font-size: 2rem;
   &:hover {
     cursor: pointer;
+    & span,
+    .font-icon {
+      color: $logocolor;
+    }
   }
-}
 
-li {
-    list-style: none;
+  & span {
+    letter-spacing: 1px;
+    font-weight: 800;
+    text-align: center;
+    transition: all .3s ease-in-out;
+
+    &:first-line {
+      font-size: 1.5em;
+    }
+  }
 }

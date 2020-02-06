@@ -1,3 +1,4 @@
+import { faTachometerAlt, faSearch, faCar, faPlus, faBell } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
+  faCar = faCar;
+  faTachometerAlt = faTachometerAlt;
+  faSearch = faSearch;
+  faPlus = faPlus;
+  faBell = faBell;
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+@import "../../../styles.scss";
 :host {
   width: 100%;
   box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.226);
@@ -7,5 +8,8 @@
   margin-bottom: 11px;
 }
 h1 {
+    margin: 0;
+    letter-spacing: 2px;
+    color: $blacktext;
     font-weight: 500;
 }

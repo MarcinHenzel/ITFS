@@ -1,1 +1,60 @@
-<p>add-deleg-form works!</p>
+<app-section-name>Add delegation</app-section-name>
+<form class="add-delegation-form" action="">
+  <div class="input-container">
+    <mat-form-field>
+      <input matInput name="firstName" placeholder="First name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="lastName" placeholder="Last name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerStart" placeholder="From">
+      <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+      <mat-datepicker #pickerStart></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerEnd" placeholder="To">
+      <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEnd></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="delegNr" placeholder="Delegation number">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="destination" placeholder="Destination">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="place" placeholder="Delegation place">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="companyName" placeholder="Company name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="costs" placeholder="Costs">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Transport</mat-label>
+      <mat-select>
+        <mat-option value="personal">
+          Personal
+        </mat-option>
+        <mat-option value="business">
+          Business
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="registration" placeholder="Registration">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput name="advancePay" placeholder="Advance Payment">
+    </mat-form-field>
+  </div>
+  <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
+</form>
+<div class="server-answer-container">Server Answer</div>
