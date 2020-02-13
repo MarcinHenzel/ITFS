@@ -1,5 +1,35 @@
 @import "../../../styles.scss";
 
 :host {
-    @include content-layout;
+  @include content-layout;
+}
+
+.table-container {
+  position: relative;
+  width: 100%;
+}
+
+mat-tab-group { display: flex;
+  width: 100%;
+}
+/* .table-container > mat-form-field {
+  margin-left: auto;
+  margin-right: auto;
+}
+ */
+.single-ans {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+.search-bar {
+  border: 1px solid rgb(145, 145, 145);
+  padding: 4px 4px 4px 15px;
+  border-radius: 15px;
+  width: 20%;
+  margin: 15px 10px;
+}
+.filter {
+  margin-left: 5px;
 }
