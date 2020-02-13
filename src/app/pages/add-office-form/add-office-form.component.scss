@@ -8,8 +8,9 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
+    width: 100%;
 }
 mat-form-field, .send-btn {
-    width: 50%;
     margin: 3px 0;
+    width: 40%;
 }

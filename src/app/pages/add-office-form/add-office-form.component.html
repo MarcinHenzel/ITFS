@@ -8,17 +8,19 @@
   <mat-form-field>
     <input matInput name="productName" placeholder="Product name">
   </mat-form-field>
-  
+
   <mat-form-field>
     <input matInput name="productKey" placeholder="Product's key">
   </mat-form-field>
-  
+
   <mat-form-field>
     <input matInput name="registerMail" placeholder="Register mail">
   </mat-form-field>
-  
+
   <mat-form-field>
-    <input matInput type="date" name="activationDate" placeholder="Activation date">
+    <input matInput  name="activationDate" [matDatepicker]="pickerAct" placeholder="Activation date">
+    <mat-datepicker-toggle matSuffix [for]="pickerAct"></mat-datepicker-toggle>
+    <mat-datepicker #pickerAct></mat-datepicker>
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
