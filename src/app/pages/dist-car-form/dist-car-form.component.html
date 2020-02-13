@@ -1,1 +1,45 @@
-<p>dist-car-form works!</p>
+<app-section-name>Add mileage</app-section-name>
+<form class="add-mileage-form" action="">
+  <mat-form-field>
+    <input matInput name="registerNr" placeholder="Register number">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="delegationNr" placeholder="Delegation number">
+  </mat-form-field>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">
+      <mat-form-field>
+        <input matInput name="actualMileage" placeholder="Actual mileage">
+      </mat-form-field>
+    </mat-radio-button>
+    <mat-radio-button value="2">
+      <mat-form-field>
+        <input matInput name="kmTraveled" placeholder="Kilometers traveled">
+      </mat-form-field>
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field>
+    <input matInput name="previousMileage" placeholder="Previous mileage">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput name="actualMileage" placeholder="Actual mileage">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Costs</mat-label>
+    <mat-select>
+      <mat-option value="personal">
+        U/01/20 (umowa pierwsza, rok 2020)
+      </mat-option>
+      <mat-option value="business">
+        O/01/20 (oferta 1, rok 2020
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Comment</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+  <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
+</form>
+<div class="server-answer-container">Server Answer</div>

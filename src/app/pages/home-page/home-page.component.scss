@@ -3,17 +3,18 @@
 .icon-container {
   padding: 50px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-around;
   flex-wrap: wrap;
+  height: 70vh;
 }
 .font-icon {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 app-menu-circle-btn {
-  margin: 5px;
+  margin: 15px;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   &:hover {
     cursor: pointer;
     & span,
