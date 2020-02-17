@@ -1,16 +1,47 @@
 @import "../../../styles.scss";
 
 :host {
-    @include content-layout;
+  @include content-layout;
 }
+
 .add-mileage-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 100%;
 }
-mat-form-field, .send-btn {
-    margin: 3px 0;
-    width: 40%;
+
+.add-mileage-form>mat-form-field,
+.send-btn,
+.mileage-compl {
+  margin: 3px 0;
+  width: 40%;
+}
+
+.mileage-compl {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.mileage-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /*   margin: 1px 5px; */
+}
+mat-radio-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+mat-radio-button {
+  margin: 0px;
+}
+
+.mileage-container > mat-form-field {
+  width: 45%;
+  margin: 0px;
 }

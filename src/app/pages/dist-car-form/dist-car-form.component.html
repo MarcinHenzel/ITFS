@@ -7,24 +7,30 @@
   <mat-form-field>
     <input matInput name="delegationNr" placeholder="Delegation number">
   </mat-form-field>
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="1">
-      <mat-form-field>
-        <input matInput name="actualMileage" placeholder="Actual mileage">
-      </mat-form-field>
-    </mat-radio-button>
-    <mat-radio-button value="2">
-      <mat-form-field>
-        <input matInput name="kmTraveled" placeholder="Kilometers traveled">
-      </mat-form-field>
-    </mat-radio-button>
-  </mat-radio-group>
+
   <mat-form-field>
     <input matInput name="previousMileage" placeholder="Previous mileage">
   </mat-form-field>
-  <mat-form-field>
-    <input matInput name="actualMileage" placeholder="Actual mileage">
-  </mat-form-field>
+  <div class="mileage-compl">
+    <mat-radio-group value ='opt1' #mileageChoice="matRadioGroup" aria-label="Select an option">
+      <mat-radio-button value="opt1">
+        Kilometers traveled
+
+      </mat-radio-button>
+      <mat-radio-button value="opt2">
+        Actual mileage
+      </mat-radio-button>
+    </mat-radio-group>
+    <div class="mileage-container">
+      <mat-form-field>
+        <input matInput name="kmTraveled" [disabled]="mileageChoice.value !== 'opt1' " placeholder="Kilometers traveled">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="actualMileage" [disabled]="mileageChoice.value === 'opt1'" placeholder="Actual mileage">
+      </mat-form-field>
+    </div>
+  </div>
+
   <mat-form-field>
     <mat-label>Costs</mat-label>
     <mat-select>
@@ -42,4 +48,4 @@
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
-<div class="server-answer-container">Server Answer</div>
+<div class="server-answer-container"> Server answer</div>

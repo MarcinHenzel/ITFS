@@ -1,3 +1,4 @@
+import { AddCarComponent } from './pages/add-car/add-car.component';
 import { InfoComponent } from './pages/info/info.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -24,7 +25,9 @@ const routes: Routes = [
   {path:'search-car', component: SearchCarComponent},
   {path:'dist-car', component: DistCarFormComponent},
   {path:'alarm', component: AlarmComponent},
+  {path:'add-car', component: AddCarComponent},
   {path:'info', component: InfoComponent},
+
 ];
 
 @NgModule({
