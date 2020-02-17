@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "itfs-cfcd9": {
+      "hosting": {
+        "ITFS": [
+          "itfs-cfcd9"
+        ]
+      }
+    }
+  }
+}

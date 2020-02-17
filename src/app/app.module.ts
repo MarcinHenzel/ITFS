@@ -22,6 +22,7 @@ import { MaterialModule } from './material.module';
 import { SectionNameComponent } from './components/section-name/section-name.component';
 import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle-btn.component';
 import { AddCarComponent } from './pages/add-car/add-car.component';
+import { SearchDelegComponent } from './pages/search-deleg/search-deleg.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AddCarComponent } from './pages/add-car/add-car.component';
     InfoComponent,
     SectionNameComponent,
     MenuCircleBtnComponent,
-    AddCarComponent
+    AddCarComponent,
+    SearchDelegComponent
   ],
   imports: [
     MaterialModule,

@@ -25,6 +25,9 @@
     </table>
   </mat-tab>
   <mat-tab label="By System Name" >
+    <mat-form-field class="filter">
+      <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
       <table mat-table [dataSource]="dataSource" class="table-container">
         <ng-container matColumnDef="Pc Name">
           <th mat-header-cell *matHeaderCellDef> PC name </th>
