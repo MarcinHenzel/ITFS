@@ -15,10 +15,16 @@ form {
   justify-content: center;
   padding: 10px;
 }
-mat-form-field, .send-btn {
+mat-form-field, .send-btn, .payment-container {
   width: 40%;
   margin: 0 3px;
 }
 .send-btn {
   margin-bottom: 5px;
+}
+.currency {
+  width: 72%;
+}
+.currency-select {
+  width: 25%;
 }

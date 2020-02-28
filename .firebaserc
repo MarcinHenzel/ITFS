@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "default": "itfs-cfcd9"
+  },
   "targets": {
     "itfs-cfcd9": {
       "hosting": {

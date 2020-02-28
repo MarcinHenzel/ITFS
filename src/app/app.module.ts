@@ -23,7 +23,6 @@ import { SectionNameComponent } from './components/section-name/section-name.com
 import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle-btn.component';
 import { AddCarComponent } from './pages/add-car/add-car.component';
 import { SearchDelegComponent } from './pages/search-deleg/search-deleg.component';
-
 @NgModule({
   declarations: [
     AppComponent,

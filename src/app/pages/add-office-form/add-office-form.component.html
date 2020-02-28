@@ -3,11 +3,26 @@
   <mat-form-field>
     <input matInput name="pcName" placeholder="Pc name">
   </mat-form-field>
-
   <mat-form-field>
-    <input matInput name="productName" placeholder="Product name">
+    <mat-label>Product name</mat-label>
+    <mat-select name="productName" >
+      <mat-option value="personal">
+        Microsoft Office H&B 2014
+      </mat-option>
+      <mat-option value="business" >
+        Microsoft Office H&B 2015
+      </mat-option>
+      <mat-option value="plane">
+        Microsoft Office H&B 2016
+      </mat-option>
+      <mat-option value="train">
+        Microsoft Office H&B 2017
+      </mat-option>
+      <mat-option value="other">
+        Microsoft Office H&B 2018
+      </mat-option>
+    </mat-select>
   </mat-form-field>
-
   <mat-form-field>
     <input matInput name="productKey" placeholder="Product's key">
   </mat-form-field>

@@ -18,7 +18,7 @@
       <mat-datepicker #pickerTo></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="delegNr" placeholder="Delegation number">
+      <input matInput name="delegNr" placeholder="Delegation number [YYYY/MM/NUM]">
     </mat-form-field>
 
     <mat-form-field>
@@ -35,9 +35,26 @@
     <mat-form-field>
       <input matInput name="costs"  placeholder="Costs">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput name="advancePay" placeholder="Advance Payment">
-    </mat-form-field>
+    <div class="payment-container">
+      <mat-form-field class="currency-select">
+        <mat-label>Currency</mat-label>
+        <mat-select  name="currency" >
+          <mat-option value="personal">
+            DOLLAR
+          </mat-option>
+          <mat-option value="business" >
+            EURO
+          </mat-option>
+          <mat-option value="plane">
+            PLN
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="currency">
+        <input matInput name="advancePay" placeholder="Advance Payment">
+      </mat-form-field>
+    </div>
+
     <mat-form-field>
       <mat-label>Transport</mat-label>
       <mat-select #transport (valueChange)='change($event)'>
@@ -58,10 +75,27 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field  >
-      <input matInput name="registrationNr" [disabled]='!isBusinessTransport' placeholder="Registration number">
-    </mat-form-field>
 
+    <mat-form-field>
+      <mat-label>Registration</mat-label>
+      <mat-select [disabled]='!isBusinessTransport' name="registrationNr" >
+        <mat-option value="personal">
+          sr321232
+        </mat-option>
+        <mat-option value="business" >
+          sr354312
+        </mat-option>
+        <mat-option value="plane">
+          sr321221
+        </mat-option>
+        <mat-option value="train">
+          sr321321
+        </mat-option>
+        <mat-option value="other">
+          sr332131
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
