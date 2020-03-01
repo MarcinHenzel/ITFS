@@ -1,3 +1,4 @@
+@import "../../../styles.scss";
 .navbar {
   position: relative;
   width: 100vw;
@@ -17,7 +18,7 @@ li a {
   cursor: pointer;
   font-size: 25px;
   display: block;
-  color: white;
+  color: $white;
   text-align: center;
   padding: 20px 16px;
   text-decoration: none;
@@ -25,6 +26,7 @@ li a {
 
 li a:hover {
   background-color: #111;
+  color: $logocolor;
 }
 
 .logo {
