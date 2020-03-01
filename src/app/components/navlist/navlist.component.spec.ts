@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchDelegComponent } from './search-deleg.component';
+import { NavlistComponent } from './navlist.component';
 
-describe('SearchDelegComponent', () => {
-  let component: SearchDelegComponent;
-  let fixture: ComponentFixture<SearchDelegComponent>;
+describe('NavlistComponent', () => {
+  let component: NavlistComponent;
+  let fixture: ComponentFixture<NavlistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchDelegComponent ]
+      declarations: [ NavlistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchDelegComponent);
+    fixture = TestBed.createComponent(NavlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -79,6 +79,7 @@
   justify-content: center;
   &:hover {
     cursor: pointer;
+    background-color: rgb(26, 26, 26);
     & span,
     .font-icon--alarm {
       color: $logocolor;
@@ -119,6 +120,7 @@ app-menu-circle-btn {
 
   &:hover {
     cursor: pointer;
+    background-color: rgb(26, 26, 26);
 
     & span,
     .font-icon {

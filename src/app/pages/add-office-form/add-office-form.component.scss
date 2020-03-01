@@ -2,6 +2,7 @@
 
 :host {
     @include content-layout;
+    position: relative;
 }
 .add-office-form {
     display: flex;
@@ -13,4 +14,11 @@
 mat-form-field, .send-btn {
     margin: 3px 0;
     width: 40%;
+
+}
+app-navlist{
+/*   position: absolute;
+  left: 0px;
+  top: 50px; */
+  @include navlist-position;
 }
