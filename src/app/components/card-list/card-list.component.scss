@@ -1,47 +1,51 @@
 @import "../../../styles.scss";
+
 :host {
   display: flex;
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: center;
- }
+}
 
 .card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: 80%;
+  max-height: 80%;
+  flex-wrap: wrap;
   width: 25%;
-  padding: 1%;
+  padding: 0 1% 1% 1%;
   background-color: #222;
   border-radius: 10px;
   box-shadow: -5px 0 2rem rgba(0, 0, 0, 0.493);
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in-out;
   position: relative;
   left: 0%;
 }
 
 .card:not(:first-child) {
   box-shadow: -25px 0 2rem rgba(0, 0, 0, 0.493);
-  margin-left: -150px;
+  margin-left: -100px;
 }
 
 .card:hover {
   transform: translateY(-20px);
-  transition: 0.3s ease-out;
+  transition: 0.3s ease-in-out;
 }
 
-.card:hover ~ .card {
+.card:hover~.card {
   position: relative;
-  left: 130px;
-  transition: 0.3s ease-out;
+  left: 80px;
+  transition: 0.3s ease-in-out;
 }
 
 .title {
-  color: white;
-  font-weight: 400;
-  letter-spacing: .7px;
+  color: $white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
   left: 20px;
   top: 15px;
 }
@@ -49,68 +53,74 @@
 .bar {
   position: relative;
   bottom: 10px;
-  height: 5px;
-  width: 90%;
+  height: 3px;
   background-color: $logocolor;
 }
+
 .btn-container {
   flex: 1;
-  padding: 2%;
-  border: 1px solid white;
-  border-radius: 7px;
-}
-
-/* .card:hover .filledbar {
-  width: 90%;
-  transition: 0.3s ease-out;
-}
-
-.circle {
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 60px);
-}
-
-.stroke {
-  stroke: white;
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
-  transition: 0.6s ease-out;
-}
-
-svg {
-  fill: #17141d;
-  stroke-width: 2px;
-}
-
-.card:hover .stroke {
-  stroke-dashoffset: 100;
-  transition: 0.6s ease-out;
-}
-
- */
-
-
-
-
-
-.icon-container {
-  padding: 50px;
+  border: 1px solid $white;
   display: flex;
-  align-items: stretch;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: 70vh;
+  width: 100%;
+
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
 }
-.font-icon {
-  font-size: 3.5rem;
-}
-app-menu-circle-btn {
-  margin: 15px;
-  color: white;
-  font-size: .5rem;
+
+.alarm-container {
+  flex: 1;
+  border: 2px solid $white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     cursor: pointer;
+
+    & span,
+    .font-icon--alarm {
+      color: $logocolor;
+    }
+  }
+
+}
+
+.alarm-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .font-icon--alarm {
+    color: $white;
+    font-size: 11rem;
+    transition: .3s ease-in all;
+  }
+
+  span {
+    transition: .3s ease-in all;
+    color: white;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+}
+
+
+.font-icon {
+  font-size: 3rem;
+}
+
+app-menu-circle-btn {
+  flex: 1;
+  color: $white;
+  font-size: 1.3rem;
+
+  &:hover {
+    cursor: pointer;
+
     & span,
     .font-icon {
       color: $logocolor;
@@ -118,8 +128,8 @@ app-menu-circle-btn {
   }
 
   & span {
-    letter-spacing: 1px;
-    font-weight: 800;
+    letter-spacing: 2px;
+    font-weight: 500;
     text-align: center;
     transition: all .3s ease-in-out;
 

@@ -1,17 +1,24 @@
 @import "../../../styles.scss";
 
 :host {
+  width: 100%;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid $white;
 }
-.circle {
+.span-container {
+  width: 35%;
+}
+
+/* .circle {
   display: flex;
   flex-direction: column;
   width: 8.5em;
   height: 8.5em;
-  border-radius: 50%;
-  background-color: rgb(90, 136, 221);
-  border: .6rem solid rgb(117, 126, 143);
   align-items: center;
   justify-content: center;
 
 }
+ */
