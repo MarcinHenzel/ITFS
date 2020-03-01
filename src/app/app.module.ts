@@ -23,6 +23,7 @@ import { SectionNameComponent } from './components/section-name/section-name.com
 import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle-btn.component';
 import { AddCarComponent } from './pages/add-car/add-car.component';
 import { SearchDelegComponent } from './pages/search-deleg/search-deleg.component';
+import { CardListComponent } from './components/card-list/card-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { SearchDelegComponent } from './pages/search-deleg/search-deleg.componen
     SectionNameComponent,
     MenuCircleBtnComponent,
     AddCarComponent,
-    SearchDelegComponent
+    SearchDelegComponent,
+    CardListComponent
   ],
   imports: [
     MaterialModule,

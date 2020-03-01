@@ -11,5 +11,9 @@ app-navbar {
     margin-right: auto;
     background-color: rgb(250, 250, 250);
     flex:1;
+    /* height: 700px; */
     width: 1440px; // not responsive
+    display:flex;
+    align-items:stretch;
+    justify-content: stretch;
 }

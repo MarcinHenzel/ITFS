@@ -1,5 +1,36 @@
 @import "../../../styles.scss";
 
+:host {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.header-container {
+  position: relative;
+}
+h1 {
+  border-bottom: 3px solid $logocolor;
+  display: inline-block;
+  line-height: 0.9;
+  text-shadow:
+    3px 3px white,
+    3px -3px white,
+    -3px 3px white,
+    -3px -3px white;
+  letter-spacing: 2px;
+  color: $blacktext;
+  font-size: 3rem;
+/*   &::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    bottom: 20px;
+    width: 100%;
+    height: 3px;
+    background-color: $logocolor;
+  } */
+}
 .icon-container {
   padding: 50px;
   display: flex;
