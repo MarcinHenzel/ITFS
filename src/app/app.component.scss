@@ -11,9 +11,19 @@ app-navbar {
     margin-right: auto;
     background-color: rgb(250, 250, 250);
     flex:1;
-    /* height: 700px; */
-    width: 1440px; // not responsive
+    width: 75vw;
     display:flex;
     align-items:stretch;
     justify-content: stretch;
 }
+@media (max-width: 1440px) {
+  .container {
+    width: 65vw;
+  }
+}
+@media (max-width: 1023px) {
+  .container {
+    width: 100vw;
+  }
+}
+

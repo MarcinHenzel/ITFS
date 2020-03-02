@@ -3,11 +3,11 @@
 :host {
     @include content-layout;
 }
-.comunique-form {
+.alarm-form {
   margin-top: 50px;
   border: 1px solid rgb(119, 119, 119);
   padding: 14px;
-  width: 800px;
+  width: 90%;
 }
 
 .communique-field {
@@ -26,4 +26,11 @@
   font-size: 1.4rem;
   padding: 5px 25px;
   margin: 30px;
+}
+@media (max-width: 1439px) and (min-width: 1023px) {
+
+
+
+}
+@media (max-width: 1023px) {
 }

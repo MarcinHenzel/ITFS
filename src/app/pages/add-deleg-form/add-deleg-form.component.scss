@@ -19,12 +19,16 @@ mat-form-field, .send-btn, .payment-container {
   width: 40%;
   margin: 0 3px;
 }
+.payment-container {
+  display: flex;
+}
 .send-btn {
   margin-bottom: 5px;
 }
-.currency {
-  width: 72%;
-}
 .currency-select {
-  width: 25%;
+  flex: 1;
 }
+.currency {
+  flex:3;
+}
+
