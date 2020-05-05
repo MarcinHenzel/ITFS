@@ -1,20 +1,20 @@
-<app-section-name>Add car</app-section-name>
+<app-section-name>Add vehicle</app-section-name>
 <app-navlist></app-navlist>
-<form class="add-car-form" action="">
+<form (ngSubmit)="onSubmit()" [formGroup]='addCarForm' class="add-car-form" action="">
   <mat-form-field>
-    <input matInput name="registerNr" placeholder="Register nnumber">
+    <input formControlName='registerNr' matInput name="registerNr" placeholder="Register number">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="brand" placeholder="Brand">
+    <input formControlName='brand' matInput name="brand" placeholder="Brand">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="model" placeholder="Model">
+    <input formControlName='model' matInput name="model" placeholder="Model">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="mileage" placeholder="mileage">
+    <input formControlName='mileage' matInput name="mileage" placeholder="Mileage">
   </mat-form-field>
 
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>

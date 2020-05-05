@@ -24,6 +24,7 @@ import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle
 import { AddCarComponent } from './pages/add-car/add-car.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { NavlistComponent } from './components/navlist/navlist.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,8 @@ import { NavlistComponent } from './components/navlist/navlist.component';
   imports: [
     MaterialModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule

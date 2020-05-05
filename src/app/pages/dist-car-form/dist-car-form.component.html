@@ -1,39 +1,38 @@
 <app-section-name>Add mileage</app-section-name>
 <app-navlist></app-navlist>
-<form class="add-mileage-form" action="">
+<form [formGroup]='distCarForm' (ngSubmit)='onSubmit()' class="add-mileage-form" action="">
   <mat-form-field>
     <mat-label>Registration</mat-label>
-    <mat-select  name="registrationNr" >
-      <mat-option value="personal">
+    <mat-select formControlName='registrationNr' name="registrationNr" >
+      <mat-option value="sr321232">
         sr321232
       </mat-option>
-      <mat-option value="business" >
+      <mat-option value="sr354312" >
         sr354312
       </mat-option>
-      <mat-option value="plane">
+      <mat-option value="sr321221">
         sr321221
       </mat-option>
-      <mat-option value="train">
+      <mat-option value="sr321321">
         sr321321
       </mat-option>
-      <mat-option value="other">
+      <mat-option value="sr332131">
         sr332131
       </mat-option>
     </mat-select>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="delegationNr" placeholder="Delegation number [YYYY/MM/NUM]">
+    <input formControlName='delegationNr' matInput name="delegationNr" placeholder="Delegation number [YYYY/MM/NUM]">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="previousMileage" placeholder="Previous mileage">
+    <input formControlName='previousMileage' matInput name="previousMileage" placeholder="Previous mileage">
   </mat-form-field>
   <div class="mileage-compl">
-    <mat-radio-group value ='opt1' #mileageChoice="matRadioGroup" aria-label="Select an option">
+    <mat-radio-group formControlName='mileageChoice' value ='opt1' #mileageChoice="matRadioGroup" aria-label="Select an option">
       <mat-radio-button value="opt1">
         Kilometers traveled
-
       </mat-radio-button>
       <mat-radio-button value="opt2">
         Actual mileage
@@ -41,17 +40,17 @@
     </mat-radio-group>
     <div class="mileage-container">
       <mat-form-field>
-        <input matInput name="kmTraveled" [disabled]="mileageChoice.value !== 'opt1' " placeholder="Kilometers traveled">
+        <input formControlName='kmTraveled' matInput name="kmTraveled" [disabled]="mileageChoice.value !== 'opt1' " placeholder="Kilometers traveled">
       </mat-form-field>
       <mat-form-field>
-        <input matInput name="actualMileage" [disabled]="mileageChoice.value === 'opt1'" placeholder="Actual mileage">
+        <input formControlName='actualMileage' matInput name="actualMileage" [disabled]="mileageChoice.value === 'opt1'" placeholder="Actual mileage">
       </mat-form-field>
     </div>
   </div>
 
   <mat-form-field>
     <mat-label>Costs</mat-label>
-    <mat-select>
+    <mat-select formControlName='costs'>
       <mat-option value="personal">
         U/01/20 (umowa pierwsza, rok 2020)
       </mat-option>
@@ -62,7 +61,7 @@
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <mat-label>Comment</mat-label>
-    <textarea matInput></textarea>
+    <textarea formControlName='comment' matInput></textarea>
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>

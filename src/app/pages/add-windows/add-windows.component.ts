@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-windows.component.scss']
 })
 export class AddWindowsComponent implements OnInit {
-
-  constructor() { }
+  addWindowsForm: FormGroup = this.formBuilder.group({
+    pcName: '',
+    systemName: '',
+    activationDate: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    // get system name
   }
-
+  onSubmit() {
+    console.log(this.addWindowsForm.value);
+  }
 }

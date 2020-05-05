@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 
@@ -30,7 +31,10 @@ const ELEMENT_DATA: WindowsData[] = [
 export class SearchWindowsFormComponent implements OnInit {
   displayedColumns: string[] = ['Pc Name', 'System Name', 'Activation Date'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() { }
+  searchWindows: FormGroup = this.formBuilder.group({
+    search: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }

@@ -1,68 +1,68 @@
 <app-section-name>Add delegation</app-section-name>
 <app-navlist></app-navlist>
-<form class="add-delegation-form" action="">
+<form (ngSubmit)="onSubmit()" [formGroup]="addDelegForm" class="add-delegation-form" action="">
   <div class="input-container">
     <mat-form-field>
-      <input matInput name="firstName" placeholder="First name">
+      <input formControlName="firstName" matInput name="firstName" placeholder="First name">
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="lastName" placeholder="Last name">
+      <input formControlName="lastName" matInput name="lastName" placeholder="Last name">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="pickerFrom" placeholder="From">
+      <input formControlName="from" matInput [matDatepicker]="pickerFrom" placeholder="From">
       <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
       <mat-datepicker #pickerFrom></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput [matDatepicker]="pickerTo" placeholder="To">
+      <input formControlName="to" matInput [matDatepicker]="pickerTo" placeholder="To">
       <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
       <mat-datepicker #pickerTo></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="delegNr" placeholder="Delegation number [YYYY/MM/NUM]">
+      <input formControlName="delegationNumber" matInput name="delegNr" placeholder="Delegation number [YYYY/MM/NUM]">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput name="destination" placeholder="Destination">
+      <input formControlName="destination" matInput name="destination" placeholder="Destination">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput name="place" placeholder="Delegation place">
+      <input formControlName="delegationPlace" matInput name="place" placeholder="Delegation place">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput name="companyName" placeholder="Company name">
+      <input formControlName="companyName" matInput name="companyName" placeholder="Company name">
     </mat-form-field>
     <mat-form-field>
-      <input matInput name="costs"  placeholder="Costs">
+      <input formControlName="costs" matInput name="costs" placeholder="Costs">
     </mat-form-field>
     <div class="payment-container">
       <mat-form-field class="currency-select">
         <mat-label>Currency</mat-label>
-        <mat-select  name="currency" >
-          <mat-option value="personal">
+        <mat-select formControlName="currency" name="currency">
+          <mat-option value="DOLLAR">
             DOLLAR
           </mat-option>
-          <mat-option value="business" >
+          <mat-option value="EURO">
             EURO
           </mat-option>
-          <mat-option value="plane">
+          <mat-option value="PLN">
             PLN
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="currency">
-        <input matInput name="advancePay" placeholder="Advance Payment">
+        <input formControlName="advancePayment" matInput name="advancePay" placeholder="Advance payment">
       </mat-form-field>
     </div>
 
     <mat-form-field>
       <mat-label>Transport</mat-label>
-      <mat-select #transport (valueChange)='change($event)'>
+      <mat-select formControlName="transport" #transport (valueChange)='change($event)'>
         <mat-option value="personal">
           Personal
         </mat-option>
-        <mat-option value="business" >
+        <mat-option value="business">
           Business
         </mat-option>
         <mat-option value="plane">
@@ -79,20 +79,20 @@
 
     <mat-form-field>
       <mat-label>Registration</mat-label>
-      <mat-select [disabled]='!isBusinessTransport' name="registrationNr" >
-        <mat-option value="personal">
+      <mat-select formControlName="registration" [disabled]='!isBusinessTransport' name="registrationNr">
+        <mat-option value="sr321232">
           sr321232
         </mat-option>
-        <mat-option value="business" >
+        <mat-option value="sr354312">
           sr354312
         </mat-option>
-        <mat-option value="plane">
+        <mat-option value="sr321221">
           sr321221
         </mat-option>
-        <mat-option value="train">
+        <mat-option value="sr321321">
           sr321321
         </mat-option>
-        <mat-option value="other">
+        <mat-option value="sr332131">
           sr332131
         </mat-option>
       </mat-select>

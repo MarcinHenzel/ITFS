@@ -1,39 +1,39 @@
 <app-section-name>Add office</app-section-name>
 <app-navlist></app-navlist>
-<form class="add-office-form" action="">
+<form (ngSubmit)="onSubmit()" [formGroup]="addOfficeForm" class="add-office-form" action="">
   <mat-form-field>
-    <input matInput name="pcName" placeholder="Pc name">
+    <input formControlName='pcName' matInput name="pcName" placeholder="Pc name">
   </mat-form-field>
   <mat-form-field>
     <mat-label>Product name</mat-label>
-    <mat-select name="productName" >
-      <mat-option value="personal">
+    <mat-select formControlName='productName' name="productName" >
+      <mat-option value="Microsoft Office H&B 2014">
         Microsoft Office H&B 2014
       </mat-option>
-      <mat-option value="business" >
+      <mat-option value="Microsoft Office H&B 2015" >
         Microsoft Office H&B 2015
       </mat-option>
-      <mat-option value="plane">
+      <mat-option value="Microsoft Office H&B 2016">
         Microsoft Office H&B 2016
       </mat-option>
-      <mat-option value="train">
+      <mat-option value="Microsoft Office H&B 2017">
         Microsoft Office H&B 2017
       </mat-option>
-      <mat-option value="other">
+      <mat-option value="Microsoft Office H&B 2018">
         Microsoft Office H&B 2018
       </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
-    <input matInput name="productKey" placeholder="Product's key">
+    <input formControlName='productKey'  matInput name="productKey" placeholder="Product's key">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="registerMail" placeholder="Register mail">
+    <input formControlName='registerMail'  matInput name="registerMail" placeholder="Register mail">
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput name="activationDate" [matDatepicker]="pickerAct" placeholder="Activation date">
+    <input formControlName='activationDate'  matInput name="activationDate" [matDatepicker]="pickerAct" placeholder="Activation date">
     <mat-datepicker-toggle matSuffix [for]="pickerAct"></mat-datepicker-toggle>
     <mat-datepicker #pickerAct></mat-datepicker>
   </mat-form-field>

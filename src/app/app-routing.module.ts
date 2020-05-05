@@ -15,18 +15,18 @@ import { AddWindowsComponent } from './pages/add-windows/add-windows.component';
 
 
 const routes: Routes = [
-  {path:'', component: HomePageComponent},
-  {path:'add-office', component: AddOfficeFormComponent},
-  {path:'deleg-view', component: DelegViewComponent},
-  {path:'search-office', component: SearchOfficeFormComponent},
-  {path:'add-windows', component: AddWindowsComponent},
-  {path:'search-windows', component: SearchWindowsFormComponent},
-  {path:'add-deleg', component: AddDelegFormComponent},
-  {path:'search-car', component: SearchCarComponent},
-  {path:'dist-car', component: DistCarFormComponent},
-  {path:'alarm', component: AlarmComponent},
-  {path:'add-car', component: AddCarComponent},
-  {path:'info', component: InfoComponent},
+  { path: '', component: HomePageComponent },
+  { path: 'add-office', component: AddOfficeFormComponent },
+  { path: 'deleg-view', component: DelegViewComponent },
+  { path: 'search-office', component: SearchOfficeFormComponent },
+  { path: 'add-windows', component: AddWindowsComponent },
+  { path: 'search-windows', component: SearchWindowsFormComponent },
+  { path: 'add-deleg', component: AddDelegFormComponent },
+  { path: 'search-car', component: SearchCarComponent },
+  { path: 'dist-car', component: DistCarFormComponent },
+  { path: 'alarm', component: AlarmComponent },
+  { path: 'add-car', component: AddCarComponent },
+  { path: 'info', component: InfoComponent },
 
 ];
 

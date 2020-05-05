@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 export interface OfficeData {
@@ -31,7 +32,10 @@ const ELEMENT_DATA: OfficeData[] = [
 export class SearchOfficeFormComponent implements OnInit {
   displayedColumns: string[] = ['date', 'pcName', 'key', 'version'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() { }
+  searchOffice: FormGroup = this.formBuilder.group({
+    search: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }

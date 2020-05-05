@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
 export interface WindowsData {
@@ -35,7 +36,10 @@ const ELEMENT_DATA: WindowsData[] = [
 export class DelegViewComponent implements OnInit {
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  constructor() { }
+  searchDeleg: FormGroup = this.formBuilder.group({
+    search: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }

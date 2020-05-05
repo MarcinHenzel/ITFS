@@ -1,8 +1,11 @@
 <app-section-name>Search office</app-section-name>
 <app-navlist></app-navlist>
-<div class="search-bar">
-  <input matInput id="search-input" class="search" placeholder="Search">
-</div>
+
+<form [formGroup]="searchOffice" class="search-form">
+  <div class="search-bar">
+    <input formControlName='search' matInput  placeholder="Search">
+  </div>
+</form>
 <mat-tab-group mat-align-tabs='center'>
   <mat-tab label="By Pc Name" >
     <table mat-table [dataSource]="dataSource" class="table-container">

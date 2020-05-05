@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alarm.component.scss']
 })
 export class AlarmComponent implements OnInit {
-
-  constructor() { }
+  alarmForm: FormGroup = this.formBuilder.group({
+    communique: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
   }
-
+  send() {
+    console.log(this.alarmForm.value);
+  }
+  sendPPOZ() {
+    console.log(this.alarmForm.value);
+  }
 }

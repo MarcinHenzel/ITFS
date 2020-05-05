@@ -1,8 +1,11 @@
 <app-section-name>Search vehicle</app-section-name>
 <app-navlist></app-navlist>
-<div class="search-bar">
-  <input matInput id="search-input" placeholder="Search">
-</div>
+
+<form [formGroup]="searchCar" class="search-form">
+  <div class="search-bar">
+    <input formControlName='search' matInput placeholder="Search">
+  </div>
+</form>
 <mat-tab-group mat-align-tabs='center'>
   <mat-tab label="By registration number">
     <table mat-table [dataSource]="dataSource" class="table-container">

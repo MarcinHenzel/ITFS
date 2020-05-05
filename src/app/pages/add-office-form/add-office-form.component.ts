@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-office-form.component.scss']
 })
 export class AddOfficeFormComponent implements OnInit {
-
-  constructor() { }
+  addOfficeForm: FormGroup = this.formBuilder.group({
+    pcName: '',
+    productName: '',
+    productKey: '',
+    registerMail: '',
+    activationDate: ''
+  })
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    //pobrac productname list
   }
-
+  onSubmit() {
+    console.log(this.addOfficeForm.value);
+  }
 }
