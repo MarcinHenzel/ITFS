@@ -36,11 +36,13 @@ const ELEMENT_DATA: WindowsData[] = [
 export class DelegViewComponent implements OnInit {
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-  searchDeleg: FormGroup = this.formBuilder.group({
+/*   searchDeleg: FormGroup = this.formBuilder.group({
     search: ''
-  })
+  }) */
   constructor(private formBuilder: FormBuilder) { }
-
+  valueChange(value) {
+    console.log(value);
+  }
   ngOnInit() {
   }
   applyFilter(filterValue: string) {
