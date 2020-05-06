@@ -1,6 +1,9 @@
+import { SearchService } from './../../services/search.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit } from '@angular/core';
+import { debounceTime, tap } from 'rxjs/operators';
+
 export interface WindowsData {
   delegationNr: string;
   name: string;
@@ -16,7 +19,7 @@ export interface WindowsData {
   mileage: number;
   costs: string; */
 }
-const ELEMENT_DATA: WindowsData[] = [
+var ELEMENT_DATA: WindowsData[] = [
   { delegationNr: 'delegationNr', name: 'eee', date: 'H', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
   { delegationNr: 'delegationNr', name: 'delssNr', date: 'He', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
   { delegationNr: 'delegationNr', name: 'ddd', date: 'Li', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
@@ -36,14 +39,21 @@ const ELEMENT_DATA: WindowsData[] = [
 export class DelegViewComponent implements OnInit {
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-/*   searchDeleg: FormGroup = this.formBuilder.group({
+  table;
+  searchDeleg: FormGroup = this.formBuilder.group({
     search: ''
-  }) */
-  constructor(private formBuilder: FormBuilder) { }
-  valueChange(value) {
-    console.log(value);
-  }
+  })
+
+  constructor(private formBuilder: FormBuilder, private searchServ: SearchService) { }
+
   ngOnInit() {
+    this.searchDeleg.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
+      this.searchServ.getDelegation(val).subscribe((data: any) => {
+        this.dataSource = new MatTableDataSource(data)
+      })
+    })
+
+
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
