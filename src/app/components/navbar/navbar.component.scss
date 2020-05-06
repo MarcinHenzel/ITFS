@@ -1,6 +1,13 @@
 @import "../../../styles.scss";
-.navbar {
+:host{
+  display:block;
   position: relative;
+  width: 100vw;
+  height: 70px;
+}
+.navbar {
+  position: fixed;
+  z-index: 999;
   width: 100vw;
   height: 70px;
   list-style-type: none;
