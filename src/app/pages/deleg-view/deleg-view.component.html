@@ -1,13 +1,15 @@
 <app-section-name>Search delegation</app-section-name>
 <app-navlist></app-navlist>
-<form [formGroup]="searchDeleg" class="search-form">
+<!-- <form [formGroup]="searchDeleg" class="search-form">
   <div class="search-bar">
     <input formControlName='search' matInput placeholder="Search">
   </div>
-</form>
+</form> -->
 <!-- <div class="search-bar">
   <input (input)='valueChange($event.target.value)' matInput placeholder="Search">
 </div> -->
+<app-search-bar (tableData)='updateTable($event)' [sortBy]='sortBy'></app-search-bar>
+
 <mat-tab-group mat-align-tabs='center' (selectedTabChange)="setSort($event)">
   <mat-tab label="By Name" >
     <mat-form-field class="filter">

@@ -1,3 +1,4 @@
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     MenuCircleBtnComponent,
     AddCarComponent,
     CardListComponent,
-    NavlistComponent
+    NavlistComponent,
+    SearchBarComponent
   ],
   imports: [
     MaterialModule,

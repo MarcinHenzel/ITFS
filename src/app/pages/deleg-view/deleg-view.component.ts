@@ -37,6 +37,7 @@ var ELEMENT_DATA: WindowsData[] = [
   styleUrls: ['./deleg-view.component.scss']
 })
 export class DelegViewComponent implements OnInit {
+  variable: number = 1;
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchDeleg: FormGroup = this.formBuilder.group({
@@ -50,14 +51,19 @@ export class DelegViewComponent implements OnInit {
       case 1: this.sortBy = 'costs'; break;
       case 2: this.sortBy = 'transport'; break;
     }
+    this.variable++;
     console.log(this.sortBy);
   }
+  updateTable(data){
+    console.log(data);
+    this.dataSource = new MatTableDataSource(data);
+  }
   ngOnInit() {
-    this.searchDeleg.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
+/*     this.searchDeleg.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
       this.searchServ.getDelegation(val, this.sortBy).subscribe((data: any) => {
         this.dataSource = new MatTableDataSource(data)
       })
-    });
+    }); */
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
