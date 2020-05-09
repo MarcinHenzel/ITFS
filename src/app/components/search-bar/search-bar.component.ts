@@ -9,16 +9,16 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit{
-  searchDeleg: FormGroup = this.formBuilder.group({
+  searchBar: FormGroup = this.formBuilder.group({
     search: ''
   })
   @Output() tableData = new EventEmitter();
-  @Input() sortBy: string;
+  @Input() sort: any;
   constructor(private formBuilder: FormBuilder, private searchServ: SearchService) { }
 
   ngOnInit() {
-    this.searchDeleg.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
-      this.searchServ.getDelegation(val, this.sortBy).subscribe((data: any) => {
+    this.searchBar.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
+      this.searchServ.getData(val, this.sort).subscribe((data: any) => {
         this.tableData.emit(data);
       })
     });

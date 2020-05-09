@@ -1,18 +1,10 @@
+import { SearchBarComponent } from './../../components/search-bar/search-bar.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, OnInit } from '@angular/core';
-export interface WindowsData {
-  registrationNr: string;
-  delegationNr: string;
-  mileage: string;
-  costs: string;
-  /* Production version:
-  registrationNr: number;
-  delegationNr: number;
-  mileage: number;
-  costs: string; */
-}
-const ELEMENT_DATA: WindowsData[] = [
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { VehicleData } from 'src/app/models/VehicleData';
+
+const ELEMENT_DATA: VehicleData[] = [
   {registrationNr: 'registrationNr', delegationNr: 'delegationNr', mileage: 'H', costs: 'costs'},
   {registrationNr: 'registrationNr', delegationNr: 'delegationNr', mileage: 'He', costs: 'costs'},
   {registrationNr: 'registrationNr', delegationNr: 'delegationNr', mileage: 'Li', costs: 'costs'},
@@ -30,14 +22,27 @@ const ELEMENT_DATA: WindowsData[] = [
   styleUrls: ['./search-car.component.scss']
 })
 export class SearchCarComponent implements OnInit {
+  @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
   displayedColumns: string[] = ['Registration Number', 'Delegation Number', 'Mileage', 'Costs'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchCar: FormGroup = this.formBuilder.group({
     search: ''
   })
+  sort = {lookFor: 'vehicle', by: 'REGISTRATION'};
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+  }
+  setSort(event) {
+    switch (event.index) {
+      case 0: this.sort.by = 'REGISTRATION'; break;
+      case 1: this.sort.by = 'DELEG'; break;
+    }
+    const search = this.searchBar.searchBar.controls.search;
+    search.setValue(search.value);
+  }
+  updateTable(data: VehicleData[]) {
+    this.dataSource = new MatTableDataSource(data);
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

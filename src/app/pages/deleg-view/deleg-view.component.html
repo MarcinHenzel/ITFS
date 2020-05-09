@@ -8,7 +8,7 @@
 <!-- <div class="search-bar">
   <input (input)='valueChange($event.target.value)' matInput placeholder="Search">
 </div> -->
-<app-search-bar (tableData)='updateTable($event)' [sortBy]='sortBy'></app-search-bar>
+<app-search-bar (tableData)='updateTable($event)' [sort]='sort'></app-search-bar>
 
 <mat-tab-group mat-align-tabs='center' (selectedTabChange)="setSort($event)">
   <mat-tab label="By Name" >

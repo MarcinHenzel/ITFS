@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 export class SearchService {
   baseUrl = 'http://localhost:3000'
   constructor(private http: HttpClient) {
-    console.log('inieesesseestsss')
   }
-  getDelegation(value, sortBy) {
-    return this.http.get(`${this.baseUrl}/delegSearch/`, {params: {value, sortBy}});
+  getData(value, {lookFor, by}) {
+    console.log(lookFor, by);
+    return this.http.get(`${this.baseUrl}/search-${lookFor}/`, {params: {value, by}});
   }
 }

@@ -1,12 +1,14 @@
 <app-section-name>Search office</app-section-name>
 <app-navlist></app-navlist>
 
-<form [formGroup]="searchOffice" class="search-form">
+<!-- <form [formGroup]="searchOffice" class="search-form">
   <div class="search-bar">
     <input formControlName='search' matInput  placeholder="Search">
   </div>
-</form>
-<mat-tab-group mat-align-tabs='center'>
+</form> -->
+<app-search-bar (tableData)='updateTable($event)' [sort]='sort'></app-search-bar>
+
+<mat-tab-group mat-align-tabs='center' (selectedTabChange)="setSort($event)">
   <mat-tab label="By Pc Name" >
     <table mat-table [dataSource]="dataSource" class="table-container">
 

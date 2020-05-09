@@ -1,25 +1,13 @@
+import { DelegationData } from '../../models/DelegationData';
+import { SearchBarComponent } from './../../components/search-bar/search-bar.component';
 import { SearchService } from './../../services/search.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, tap } from 'rxjs/operators';
 
-export interface WindowsData {
-  delegationNr: string;
-  name: string;
-  date: string;
-  destination: string;
-  delegationPlace: string;
-  costs: string;
-  advancePay: string;
-  transport: string;
-  /* Production version:
-  registrationNr: number;
-  delegationNr: number;
-  mileage: number;
-  costs: string; */
-}
-var ELEMENT_DATA: WindowsData[] = [
+
+var ELEMENT_DATA: DelegationData[] = [
   { delegationNr: 'delegationNr', name: 'eee', date: 'H', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
   { delegationNr: 'delegationNr', name: 'delssNr', date: 'He', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
   { delegationNr: 'delegationNr', name: 'ddd', date: 'Li', destination: 'destination', delegationPlace: 'delegacj', costs: 'costs', advancePay: '123', transport: 'plane' },
@@ -37,33 +25,29 @@ var ELEMENT_DATA: WindowsData[] = [
   styleUrls: ['./deleg-view.component.scss']
 })
 export class DelegViewComponent implements OnInit {
-  variable: number = 1;
+  @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
+
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchDeleg: FormGroup = this.formBuilder.group({
     search: ''
   })
-  sortBy = 'name';
+  sort = {lookFor: 'delegation', by: 'NAME'};
   constructor(private formBuilder: FormBuilder, private searchServ: SearchService) { }
+  ngOnInit() {
+
+  }
   setSort(event) {
     switch (event.index) {
-      case 0: this.sortBy = 'name'; break;
-      case 1: this.sortBy = 'costs'; break;
-      case 2: this.sortBy = 'transport'; break;
+      case 0: this.sort.by = 'NAME'; break;
+      case 1: this.sort.by = 'COSTS'; break;
+      case 2: this.sort.by = 'TRANPOSRT'; break;
     }
-    this.variable++;
-    console.log(this.sortBy);
+    const search = this.searchBar.searchBar.controls.search;
+    search.setValue(search.value);
   }
-  updateTable(data){
-    console.log(data);
+  updateTable(data: DelegationData[]) {
     this.dataSource = new MatTableDataSource(data);
-  }
-  ngOnInit() {
-/*     this.searchDeleg.controls.search.valueChanges.pipe(debounceTime(500)).subscribe((val) => {
-      this.searchServ.getDelegation(val, this.sortBy).subscribe((data: any) => {
-        this.dataSource = new MatTableDataSource(data)
-      })
-    }); */
   }
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
