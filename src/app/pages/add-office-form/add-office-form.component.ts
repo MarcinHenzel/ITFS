@@ -1,3 +1,4 @@
+import { InitDataService } from './../../services/init-data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-office-form.component.scss']
 })
 export class AddOfficeFormComponent implements OnInit {
+  offices$;
   addOfficeForm: FormGroup = this.formBuilder.group({
     pcName: '',
     productName: '',
@@ -14,10 +16,10 @@ export class AddOfficeFormComponent implements OnInit {
     registerMail: '',
     activationDate: ''
   })
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private initService: InitDataService) { }
 
   ngOnInit() {
-    //pobrac productname list
+    this.offices$ = this.initService.getOffices();
   }
   onSubmit() {
     console.log(this.addOfficeForm.value);

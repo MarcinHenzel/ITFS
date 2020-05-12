@@ -4,21 +4,10 @@
   <mat-form-field>
     <mat-label>Registration</mat-label>
     <mat-select formControlName='registrationNr' name="registrationNr" >
-      <mat-option value="sr321232">
-        sr321232
+      <mat-option *ngFor='let reg of regList$ | async' value="{{reg}}">
+        {{reg}}
       </mat-option>
-      <mat-option value="sr354312" >
-        sr354312
-      </mat-option>
-      <mat-option value="sr321221">
-        sr321221
-      </mat-option>
-      <mat-option value="sr321321">
-        sr321321
-      </mat-option>
-      <mat-option value="sr332131">
-        sr332131
-      </mat-option>
+
     </mat-select>
   </mat-form-field>
 
@@ -51,11 +40,8 @@
   <mat-form-field>
     <mat-label>Costs</mat-label>
     <mat-select formControlName='costs'>
-      <mat-option value="personal">
-        U/01/20 (umowa pierwsza, rok 2020)
-      </mat-option>
-      <mat-option value="business">
-        O/01/20 (oferta 1, rok 2020
+      <mat-option *ngFor="let cost of costsList$ | async" value="{{cost}}">
+        {{cost}}
       </mat-option>
     </mat-select>
   </mat-form-field>

@@ -40,8 +40,8 @@
       <mat-form-field class="currency-select">
         <mat-label>Currency</mat-label>
         <mat-select formControlName="currency" name="currency">
-          <mat-option value="DOLLAR">
-            DOLLAR
+          <mat-option value="DOLAR">
+            DOLAR
           </mat-option>
           <mat-option value="EURO">
             EURO
@@ -80,20 +80,8 @@
     <mat-form-field>
       <mat-label>Registration</mat-label>
       <mat-select formControlName="registration" [disabled]='!isBusinessTransport' name="registrationNr">
-        <mat-option value="sr321232">
-          sr321232
-        </mat-option>
-        <mat-option value="sr354312">
-          sr354312
-        </mat-option>
-        <mat-option value="sr321221">
-          sr321221
-        </mat-option>
-        <mat-option value="sr321321">
-          sr321321
-        </mat-option>
-        <mat-option value="sr332131">
-          sr332131
+        <mat-option *ngFor='let reg of regList$ | async' value="{{reg}}">
+          {{reg}}
         </mat-option>
       </mat-select>
     </mat-form-field>

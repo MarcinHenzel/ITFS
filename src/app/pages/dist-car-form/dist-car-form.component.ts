@@ -1,3 +1,4 @@
+import { InitDataService } from './../../services/init-data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dist-car-form.component.scss']
 })
 export class DistCarFormComponent implements OnInit {
+  regList$;
+  costsList$;
   distCarForm: FormGroup = this.formBuilder.group({
     registrationNr: '',
     delegationNr: '',
@@ -17,10 +20,11 @@ export class DistCarFormComponent implements OnInit {
     costs: '',
     comment: ''
   })
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private initService: InitDataService) { }
 
   ngOnInit() {
-    // pobrac registration, costs
+    this.regList$ = this.initService.getRegs();
+    this.costsList$ = this.initService.getCosts();
   }
   onSubmit(){
 

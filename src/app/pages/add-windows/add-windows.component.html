@@ -7,18 +7,10 @@
   <mat-form-field>
     <mat-label>System name</mat-label>
     <mat-select formControlName='systemName' name="systemName">
-      <mat-option value="Windows 7">
-        Windows 7
+      <mat-option *ngFor='let window of windows$ | async' value="{{window}}">
+        {{window}}
       </mat-option>
-      <mat-option value="Windows Vista">
-        Windows Vista
-      </mat-option>
-      <mat-option value="Windows 10">
-        Windows 10
-      </mat-option>
-      <mat-option value="Windows 95">
-        Windows 95
-      </mat-option>
+
     </mat-select>
   </mat-form-field>
   <mat-form-field>

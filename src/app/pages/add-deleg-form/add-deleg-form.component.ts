@@ -1,3 +1,4 @@
+import { InitDataService } from './../../services/init-data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
@@ -7,6 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-deleg-form.component.scss']
 })
 export class AddDelegFormComponent implements OnInit {
+  regList$;
   isBusinessTransport = false;
   addDelegForm: FormGroup = this.formBuilder.group({
     firstName: '',
@@ -24,10 +26,11 @@ export class AddDelegFormComponent implements OnInit {
     registration: '',
   })
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private initService: InitDataService) {
 
   }
   ngOnInit() {
+    this.regList$ = this.initService.getRegs();
     //GET DATA TO REGISTRATIONS
     /*     this.categoryserv.senddata(this.form.value.categoryname).subscribe(data=>{
           console.log(data);

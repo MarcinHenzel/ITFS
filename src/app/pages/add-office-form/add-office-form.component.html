@@ -7,21 +7,10 @@
   <mat-form-field>
     <mat-label>Product name</mat-label>
     <mat-select formControlName='productName' name="productName" >
-      <mat-option value="Microsoft Office H&B 2014">
-        Microsoft Office H&B 2014
+      <mat-option *ngFor='let office of offices$ | async' value="{{office}}">
+        {{office}}
       </mat-option>
-      <mat-option value="Microsoft Office H&B 2015" >
-        Microsoft Office H&B 2015
-      </mat-option>
-      <mat-option value="Microsoft Office H&B 2016">
-        Microsoft Office H&B 2016
-      </mat-option>
-      <mat-option value="Microsoft Office H&B 2017">
-        Microsoft Office H&B 2017
-      </mat-option>
-      <mat-option value="Microsoft Office H&B 2018">
-        Microsoft Office H&B 2018
-      </mat-option>
+
     </mat-select>
   </mat-form-field>
   <mat-form-field>
