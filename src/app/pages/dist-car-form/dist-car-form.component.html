@@ -51,4 +51,4 @@
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
-<div class="server-answer-container"> Server answer</div>
+<app-server-ans  [status]='server.status' >{{server.answer}}</app-server-ans>

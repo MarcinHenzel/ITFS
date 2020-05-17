@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 10px 14px;
+  display:none;
+  margin: 4px;
+}
+
+.mes {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: .7px;
+}
+
+.green {
+  display:block;
+
+  background: rgb(144, 204, 144);
+}
+
+.red {
+  display:block;
+  background: rgb(211, 139, 139);
+}

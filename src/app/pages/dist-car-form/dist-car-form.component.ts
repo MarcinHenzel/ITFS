@@ -1,3 +1,4 @@
+import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dist-car-form.component.scss']
 })
 export class DistCarFormComponent implements OnInit {
+  server: any = {answer: '', status: null};
   regList$;
   costsList$;
   distCarForm: FormGroup = this.formBuilder.group({
@@ -20,13 +22,18 @@ export class DistCarFormComponent implements OnInit {
     costs: '',
     comment: ''
   })
-  constructor(private formBuilder: FormBuilder, private initService: InitDataService) { }
+  constructor(private formBuilder: FormBuilder, private initService: InitDataService, private addService: AddService) { }
 
   ngOnInit() {
     this.regList$ = this.initService.getRegs();
     this.costsList$ = this.initService.getCosts();
   }
-  onSubmit(){
-
+  onSubmit() {
+    this.addService.addVehicle(this.distCarForm.value).subscribe(res => {
+      this.server.status = true;
+    }, err =>{
+      this.server.answer = `${err}`;
+      this.server.status = false;
+    });
   }
 }

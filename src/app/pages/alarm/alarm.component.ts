@@ -20,4 +20,13 @@ export class AlarmComponent implements OnInit {
   sendPPOZ() {
     console.log(this.alarmForm.value);
   }
+  // TODO:
+/*   onSubmit() {
+    this.addService.addDeleg(this.addDelegForm.value).subscribe(res => {
+      this.server.status = true;
+    }, err =>{
+      this.server.answer = `${err}`;
+      this.server.status = false;
+    });
+  } */
 }

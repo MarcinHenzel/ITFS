@@ -1,5 +1,6 @@
+import { AddService } from './../../services/add.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-car',
@@ -7,26 +8,25 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-car.component.scss']
 })
 export class AddCarComponent implements OnInit {
+  server: any = {answer: '', status: null};
   addCarForm: FormGroup = this.formBuilder.group({
     registerNr: '',
     brand: '',
     model: '',
     mileage: ''
   });
-/*   addCarForm: FormGroup = new FormGroup({
-    registerNr: new FormControl(),
-    brand: new FormControl(),
-    model: new FormControl(),
-    mileage: new FormControl()
-  }) */
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private addService:AddService) {}
 
   ngOnInit() {
     this.addCarForm.patchValue({registerNr: '213', brand: 'Merc'});
   }
   onSubmit() {
-    console.log(this.addCarForm.value);
-
+    this.addService.addVehicle(this.addCarForm.value).subscribe(res => {
+      this.server.status = true;
+    }, err =>{
+      this.server.answer = `${err}`;
+      this.server.status = false;
+    });
   }
 }

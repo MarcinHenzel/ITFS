@@ -27,6 +27,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { NavlistComponent } from './components/navlist/navlist.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ServerAnsComponent } from './components/server-ans/server-ans.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddCarComponent,
     CardListComponent,
     NavlistComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ServerAnsComponent
   ],
   imports: [
     MaterialModule,

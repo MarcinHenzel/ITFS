@@ -1,3 +1,4 @@
+import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -8,6 +9,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./add-deleg-form.component.scss']
 })
 export class AddDelegFormComponent implements OnInit {
+  server: any = {answer: '', status: null};
+
   regList$;
   isBusinessTransport = false;
   addDelegForm: FormGroup = this.formBuilder.group({
@@ -26,30 +29,19 @@ export class AddDelegFormComponent implements OnInit {
     registration: '',
   })
 
-  constructor(private formBuilder: FormBuilder, private initService: InitDataService) {
+  constructor(private formBuilder: FormBuilder, private initService: InitDataService, private addService: AddService) {
 
   }
   ngOnInit() {
     this.regList$ = this.initService.getRegs();
-    //GET DATA TO REGISTRATIONS
-    /*     this.categoryserv.senddata(this.form.value.categoryname).subscribe(data=>{
-          console.log(data);
-        } */
-    /* @Injectable()
-    export class CategoryService {
-        private urlcategory = "http://localhost:8080/create-category";
-        constructor(private http: Http){
-       senddata(data : any)
-         var body = JSON.stringify(data);
-                var headers = new Headers();
-                headers.append('Content-Type', 'application/json');
-                return this.http.post(this.urlcategory, body, { headers: headers }).map((data: Response) => data.json()).catch(this.handleError);
-     }
-
-    } */
   }
   onSubmit() {
-    console.log(this.addDelegForm.value)
+    this.addService.addDeleg(this.addDelegForm.value).subscribe(res => {
+      this.server.status = true;
+    }, err =>{
+      this.server.answer = `${err}`;
+      this.server.status = false;
+    });
   }
   change(ev) {
     if (ev === 'business') {
