@@ -1,6 +1,6 @@
 import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,9 +12,9 @@ export class AddWindowsComponent implements OnInit {
   windows$;
   server: any = {answer: '', status: null};
   addWindowsForm: FormGroup = this.formBuilder.group({
-    pcName: '',
-    systemName: '',
-    activationDate: ''
+    pcName: new FormControl('', [Validators.required]),
+    systemName:  new FormControl('', [Validators.required]),
+    activationDate:  new FormControl('', [Validators.required])
   })
   constructor(private formBuilder: FormBuilder, private initService: InitDataService, private addService: AddService) { }
 
@@ -22,6 +22,10 @@ export class AddWindowsComponent implements OnInit {
     this.windows$ = this.initService.getWindows();
   }
   onSubmit() {
+    if (this.addWindowsForm.invalid) {
+      this.server.status = 'All fields are required';
+      return;
+    }
     this.addService.addWindows(this.addWindowsForm.value).subscribe(res => {
       this.server.status = true;
     }, err =>{

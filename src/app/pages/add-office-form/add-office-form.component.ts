@@ -1,6 +1,6 @@
 import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-office-form.component.scss']
 })
 export class AddOfficeFormComponent implements OnInit {
-  server: any = {answer: '', status: null};
+  server: any = { answer: '', status: null };
   offices$;
   addOfficeForm: FormGroup = this.formBuilder.group({
-    pcName: '',
-    productName: '',
-    productKey: '',
-    registerMail: '',
-    activationDate: ''
+    pcName: new FormControl('', [Validators.required]),
+    productName: new FormControl('', [Validators.required]),
+    productKey: new FormControl('', [Validators.required]),
+    registerMail: new FormControl('', [Validators.required, Validators.email]),
+    activationDate: new FormControl('', [Validators.required]),
   })
   constructor(private formBuilder: FormBuilder, private initService: InitDataService, private addService: AddService) { }
 
@@ -24,9 +24,13 @@ export class AddOfficeFormComponent implements OnInit {
     this.offices$ = this.initService.getOffices();
   }
   onSubmit() {
+    if (this.addOfficeForm.invalid) {
+      this.server.status = 'All fields are required';
+      return;
+    }
     this.addService.addOffice(this.addOfficeForm.value).subscribe(res => {
       this.server.status = true;
-    }, err =>{
+    }, err => {
       this.server.answer = `${err}`;
       this.server.status = false;
     });

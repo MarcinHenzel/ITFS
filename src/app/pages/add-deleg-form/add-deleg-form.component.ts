@@ -1,7 +1,8 @@
 import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-deleg-form',
@@ -10,23 +11,22 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AddDelegFormComponent implements OnInit {
   server: any = {answer: '', status: null};
-
+  sub: Subscription;
   regList$;
-  isBusinessTransport = false;
   addDelegForm: FormGroup = this.formBuilder.group({
-    firstName: '',
-    lastName: '',
-    from: '',
-    to: '',
-    delegationNumber: '',
-    destination: '',
-    delegationPlace: '',
-    companyName: '',
-    costs: '',
-    currency: '',
-    advancePayment: '',
-    transport: '',
-    registration: '',
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    from: new FormControl('', [Validators.required]),
+    to: new FormControl('', [Validators.required]),
+    delegationNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9]{4}\/[0-9]{2}\/.*')]),
+    destination: new FormControl('', [Validators.required]),
+    delegationPlace: new FormControl('', [Validators.required]),
+    companyName: new FormControl('', [Validators.required]),
+    costs: new FormControl('', [Validators.required]),
+    currency: new FormControl('', [Validators.required]),
+    advancePayment: new FormControl('', [Validators.required]),
+    transport: new FormControl('', [Validators.required]),
+    registration: new FormControl('', [Validators.required]),
   })
 
   constructor(private formBuilder: FormBuilder, private initService: InitDataService, private addService: AddService) {
@@ -34,20 +34,21 @@ export class AddDelegFormComponent implements OnInit {
   }
   ngOnInit() {
     this.regList$ = this.initService.getRegs();
+    this.sub = this.addDelegForm.get('transport').valueChanges.subscribe(val => {
+      console.log(val);
+      val === 'business' ? this.addDelegForm.get('registration').enable() : this.addDelegForm.get('registration').disable();
+    });
   }
   onSubmit() {
+    if (this.addDelegForm.invalid) {
+      this.server.status = 'All fields are required';
+      return;
+    }
     this.addService.addDeleg(this.addDelegForm.value).subscribe(res => {
       this.server.status = true;
     }, err =>{
       this.server.answer = `${err}`;
       this.server.status = false;
     });
-  }
-  change(ev) {
-    if (ev === 'business') {
-      this.isBusinessTransport = true;
-    } else {
-      this.isBusinessTransport = false;
-    }
   }
 }

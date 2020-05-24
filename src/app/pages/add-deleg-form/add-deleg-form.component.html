@@ -19,7 +19,9 @@
       <mat-datepicker #pickerTo></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input formControlName="delegationNumber" matInput name="delegNr" placeholder="Delegation number [YYYY/MM/NUM]">
+      <input formControlName="delegationNumber" matInput name="delegNr" placeholder="Delegation number">
+      <mat-hint>[YYYY/MM/NUM]</mat-hint>
+      <mat-error>Invalid number. It must fulfill following pattern: [YYYY/MM/NUM] </mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -58,7 +60,7 @@
 
     <mat-form-field>
       <mat-label>Transport</mat-label>
-      <mat-select formControlName="transport" #transport (valueChange)='change($event)'>
+      <mat-select formControlName="transport" >
         <mat-option value="personal">
           Personal
         </mat-option>
@@ -79,7 +81,7 @@
 
     <mat-form-field>
       <mat-label>Registration</mat-label>
-      <mat-select formControlName="registration" [disabled]='!isBusinessTransport' name="registrationNr">
+      <mat-select formControlName="registration"  name="registrationNr">
         <mat-option *ngFor='let reg of regList$ | async' value="{{reg}}">
           {{reg}}
         </mat-option>

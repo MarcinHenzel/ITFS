@@ -1,6 +1,6 @@
 import { AddService } from './../../services/add.service';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-car',
@@ -10,18 +10,21 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AddCarComponent implements OnInit {
   server: any = {answer: '', status: null};
   addCarForm: FormGroup = this.formBuilder.group({
-    registerNr: '',
-    brand: '',
-    model: '',
-    mileage: ''
+    registerNr: new FormControl('', [Validators.required]),
+    brand: new FormControl('', [Validators.required]),
+    model: new FormControl('', [Validators.required]),
+    mileage: new FormControl('', [Validators.required])
   });
 
-  constructor(private formBuilder: FormBuilder, private addService:AddService) {}
+  constructor(private formBuilder: FormBuilder, private addService: AddService) {}
 
   ngOnInit() {
-    this.addCarForm.patchValue({registerNr: '213', brand: 'Merc'});
   }
   onSubmit() {
+    if (this.addCarForm.invalid) {
+      this.server.status = 'All fields are required';
+      return;
+    }
     this.addService.addVehicle(this.addCarForm.value).subscribe(res => {
       this.server.status = true;
     }, err =>{

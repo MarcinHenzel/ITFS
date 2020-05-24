@@ -18,14 +18,17 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input formControlName='registerMail'  matInput name="registerMail" placeholder="Register mail">
+    <input type='email' formControlName='registerMail'  matInput name="registerMail" placeholder="Register mail">
+    <mat-error >Valid email adress is required</mat-error>
   </mat-form-field>
 
   <mat-form-field>
     <input formControlName='activationDate'  matInput name="activationDate" [matDatepicker]="pickerAct" placeholder="Activation date">
     <mat-datepicker-toggle matSuffix [for]="pickerAct"></mat-datepicker-toggle>
     <mat-datepicker #pickerAct></mat-datepicker>
+    <mat-error >Valid date is required</mat-error>
+    <mat-hint>MM/DD/YYYY</mat-hint>
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
-<app-server-ans  [status]='server.status' >{{server.answer}}</app-server-ans>
+<app-server-ans  [status]='server.status' ></app-server-ans>

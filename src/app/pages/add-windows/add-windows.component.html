@@ -10,14 +10,14 @@
       <mat-option *ngFor='let window of windows$ | async' value="{{window}}">
         {{window}}
       </mat-option>
-
     </mat-select>
   </mat-form-field>
   <mat-form-field>
     <input formControlName='activationDate' matInput name="activationDate" [matDatepicker]="actDate" placeholder="Activation date">
     <mat-datepicker-toggle matSuffix [for]="actDate"></mat-datepicker-toggle>
     <mat-datepicker #actDate></mat-datepicker>
+    <mat-hint>MM/DD/YYYY</mat-hint>
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
-<app-server-ans  [status]='server.status' >{{server.answer}}</app-server-ans>
+<app-server-ans  [status]='server.status' ></app-server-ans>
