@@ -21,11 +21,11 @@
     <input formControlName='previousMileage' matInput name="previousMileage" placeholder="Previous mileage">
   </mat-form-field>
   <div class="mileage-compl">
-    <mat-radio-group formControlName='mileageChoice' value ='opt1' #mileageChoice="matRadioGroup" aria-label="Select an option">
-      <mat-radio-button value="opt1" >
+    <mat-radio-group formControlName='mileageChoice' value ='true' #mileageChoice="matRadioGroup" aria-label="Select an option">
+      <mat-radio-button value="true" >
         Kilometers traveled
       </mat-radio-button>
-      <mat-radio-button value="opt2" >
+      <mat-radio-button value="false" >
         Actual mileage
       </mat-radio-button>
     </mat-radio-group>

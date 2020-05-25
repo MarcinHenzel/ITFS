@@ -1,5 +1,6 @@
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AlarmService } from 'src/app/services/alarm.service';
 
 @Component({
   selector: 'app-alarm',
@@ -7,26 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./alarm.component.scss']
 })
 export class AlarmComponent implements OnInit {
+  server: any = { answer: '', status: null };
   alarmForm: FormGroup = this.formBuilder.group({
-    communique: ''
+    message: new FormControl('', [Validators.required])
   })
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private alarmService: AlarmService) { }
 
   ngOnInit() {
   }
   send() {
-    console.log(this.alarmForm.value);
+    this.onSubmit('sendMessage');
   }
-  sendPPOZ() {
-    console.log(this.alarmForm.value);
+  sendFireAlarm() {
+    this.onSubmit('sendFireAlarm');
   }
-  // TODO:
-/*   onSubmit() {
-    this.addService.addDeleg(this.addDelegForm.value).subscribe(res => {
+  onSubmit(func) {
+    if (this.alarmForm.invalid) {
+      this.server.status = 'Message is required';
+      return;
+    }
+    this.alarmService[func](this.alarmForm.value).subscribe(res => {
       this.server.status = true;
-    }, err =>{
+    }, err => {
       this.server.answer = `${err}`;
       this.server.status = false;
     });
-  } */
+  }
 }

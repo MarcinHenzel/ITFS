@@ -1,8 +1,9 @@
 @import "../../../styles.scss";
 
 :host {
-    @include content-layout;
+  @include content-layout;
 }
+
 .alarm-form {
   margin-top: 50px;
   border: 1px solid rgb(119, 119, 119);
@@ -10,7 +11,7 @@
   width: 90%;
 }
 
-.communique-field {
+.message-field {
   width: 98%;
 }
 
@@ -26,11 +27,4 @@
   font-size: 1.4rem;
   padding: 5px 25px;
   margin: 30px;
-}
-@media (max-width: 1439px) and (min-width: 1023px) {
-
-
-
-}
-@media (max-width: 1023px) {
 }

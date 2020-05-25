@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, OnChanges, SimpleChanges, HostBinding, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, OnChanges, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-server-ans',
@@ -17,11 +17,7 @@ export class ServerAnsComponent implements OnInit, OnChanges {
   ngOnChanges(change: SimpleChanges) {
     if (this.status === null) return;
     if (this.status === true) {
-      if (this.alarm) {
-        this.message = 'Message has been sent';
-      } else {
-        this.message = 'Record has been added succesfully';
-      }
+      this.message = this.alarm ? 'Message has been sent' : 'Record has been added succesfully';
       this.color = 'green';
     } else if (typeof this.status === 'string') {
       this.message = this.status;

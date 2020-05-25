@@ -18,9 +18,9 @@ export class DistCarFormComponent implements OnInit, OnDestroy {
     registrationNr: new FormControl('', [Validators.required]),
     delegationNr:  new FormControl('', [Validators.required, Validators.pattern('[0-9]{4}\/[0-9]{2}\/.*')]),
     previousMileage:  new FormControl('', [Validators.required]),
-    mileageChoice:  new FormControl('', [Validators.required]),
+    mileageChoice:  new FormControl('true', [Validators.required]),
     kmTraveled: new FormControl('', [Validators.required]),
-    actualMileage:  new FormControl('', [Validators.required]),
+    actualMileage:  new FormControl({value: '', disabled: true}, [Validators.required]),
     costs:  new FormControl('', [Validators.required]),
     comment:  new FormControl('')
   })
@@ -30,7 +30,7 @@ export class DistCarFormComponent implements OnInit, OnDestroy {
     this.regList$ = this.initService.getRegs();
     this.costsList$ = this.initService.getCosts();
     this.sub = this.distCarForm.get('mileageChoice').valueChanges.subscribe(val => {
-      if (val === 'opt2') {
+      if (!JSON.parse(val)) {
         this.distCarForm.get('actualMileage').enable();
         this.distCarForm.get('kmTraveled').disable();
       } else {

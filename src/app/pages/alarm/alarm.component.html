@@ -1,15 +1,14 @@
 <app-section-name>Alarm</app-section-name>
 <app-navlist></app-navlist>
 <form [formGroup]="alarmForm" class="alarm-form">
-  <mat-form-field class="communique-field">
-    <textarea formControlName="communique" class="communique" name="communique" id="communique-input" rows="5" matInput #message maxlength="512"
+  <mat-form-field class="message-field">
+    <textarea formControlName="message" class="communique" name="message" id="message-input" rows="5" matInput #message maxlength="512"
       placeholder="Message" placeholder="Message content"></textarea>
-    <!-- <mat-hint class="server-answer" align="start"><strong>Server info</strong> </mat-hint> -->
     <mat-hint align="end">{{message.value.length}} / 512</mat-hint>
   </mat-form-field>
 </form>
 <div class="buttons-container">
   <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send</button>
-  <button (click)="sendPPOZ()" class="send-btn" mat-raised-button color="accent" id="sendPPOZ-btn">Send Alarm PPOZ</button>
+  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendPPOZ-btn">Send Alarm PPOZ</button>
 </div>
-<!-- <app-server-ans  [alarm]='true' [status]='server.status' >{{server.answer}}</app-server-ans> -->
+<app-server-ans  [alarm]='true' [status]='server.status' ></app-server-ans>
