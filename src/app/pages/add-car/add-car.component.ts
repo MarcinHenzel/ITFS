@@ -21,15 +21,6 @@ export class AddCarComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    if (this.addCarForm.invalid) {
-      this.server.status = 'All fields are required';
-      return;
-    }
-    this.addService.addVehicle(this.addCarForm.value).subscribe(res => {
-      this.server.status = true;
-    }, err =>{
-      this.server.answer = `${err}`;
-      this.server.status = false;
-    });
+    this.server = this.addService.addOffice(this.addCarForm.value, this.addCarForm.invalid);
   }
 }

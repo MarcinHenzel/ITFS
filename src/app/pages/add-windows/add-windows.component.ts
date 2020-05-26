@@ -22,15 +22,6 @@ export class AddWindowsComponent implements OnInit {
     this.windows$ = this.initService.getWindows();
   }
   onSubmit() {
-    if (this.addWindowsForm.invalid) {
-      this.server.status = 'All fields are required';
-      return;
-    }
-    this.addService.addWindows(this.addWindowsForm.value).subscribe(res => {
-      this.server.status = true;
-    }, err =>{
-      this.server.answer = `${err}`;
-      this.server.status = false;
-    });
+    this.server = this.addService.addOffice(this.addWindowsForm.value, this.addWindowsForm.invalid);
   }
 }

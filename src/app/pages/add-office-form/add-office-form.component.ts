@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { AddService } from './../../services/add.service';
 import { InitDataService } from './../../services/init-data.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
@@ -23,16 +24,7 @@ export class AddOfficeFormComponent implements OnInit {
   ngOnInit() {
     this.offices$ = this.initService.getOffices();
   }
-  onSubmit() {
-    if (this.addOfficeForm.invalid) {
-      this.server.status = 'All fields are required';
-      return;
-    }
-    this.addService.addOffice(this.addOfficeForm.value).subscribe(res => {
-      this.server.status = true;
-    }, err => {
-      this.server.answer = `${err}`;
-      this.server.status = false;
-    });
+ onSubmit() {
+   this.server = this.addService.addOffice(this.addOfficeForm.value, this.addOfficeForm.invalid);
   }
 }

@@ -3,42 +3,39 @@
 <form [formGroup]='distCarForm' (ngSubmit)='onSubmit()' class="add-mileage-form" action="">
   <mat-form-field>
     <mat-label>Registration</mat-label>
-    <mat-select formControlName='registrationNr' name="registrationNr" >
+    <mat-select formControlName='registrationNr' name="registrationNr">
       <mat-option *ngFor='let reg of regList$ | async' value="{{reg}}">
         {{reg}}
       </mat-option>
-
     </mat-select>
   </mat-form-field>
-
   <mat-form-field>
     <input formControlName='delegationNr' matInput name="delegationNr" placeholder="Delegation number">
     <mat-hint>[YYYY/MM/NUM]</mat-hint>
     <mat-error>Invalid number. It must fulfill following pattern: [YYYY/MM/NUM] </mat-error>
   </mat-form-field>
-
   <mat-form-field>
     <input formControlName='previousMileage' matInput name="previousMileage" placeholder="Previous mileage">
   </mat-form-field>
   <div class="mileage-compl">
-    <mat-radio-group formControlName='mileageChoice' value ='true' #mileageChoice="matRadioGroup" aria-label="Select an option">
-      <mat-radio-button value="true" >
+    <mat-radio-group formControlName='mileageChoice' value='true' #mileageChoice="matRadioGroup"
+      aria-label="Select an option">
+      <mat-radio-button value="true">
         Kilometers traveled
       </mat-radio-button>
-      <mat-radio-button value="false" >
+      <mat-radio-button value="false">
         Actual mileage
       </mat-radio-button>
     </mat-radio-group>
     <div class="mileage-container">
       <mat-form-field>
-        <input formControlName='kmTraveled' matInput name="kmTraveled" disabled="distCarForm.get('mileageChoice').value === 'opt1'" placeholder="Kilometers traveled">
+        <input formControlName='kmTraveled' matInput name="kmTraveled" placeholder="Kilometers traveled">
       </mat-form-field>
       <mat-form-field>
-        <input formControlName='actualMileage' matInput name="actualMileage" [disabled]="distCarForm.get('mileageChoice').value === 'opt2'" placeholder="Actual mileage">
+        <input formControlName='actualMileage' matInput name="actualMileage" placeholder="Actual mileage">
       </mat-form-field>
     </div>
   </div>
-
   <mat-form-field>
     <mat-label>Costs</mat-label>
     <mat-select formControlName='costs'>
@@ -53,4 +50,4 @@
   </mat-form-field>
   <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
 </form>
-<app-server-ans  [status]='server.status'></app-server-ans>
+<app-server-ans [status]='server.status' [message]='server.answer'></app-server-ans>
