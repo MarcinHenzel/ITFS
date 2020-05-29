@@ -13,7 +13,7 @@ export class AddCarComponent implements OnInit {
     registerNr: new FormControl('', [Validators.required]),
     brand: new FormControl('', [Validators.required]),
     model: new FormControl('', [Validators.required]),
-    mileage: new FormControl('', [Validators.required])
+    mileage: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')])
   });
 
   constructor(private formBuilder: FormBuilder, private addService: AddService) {}

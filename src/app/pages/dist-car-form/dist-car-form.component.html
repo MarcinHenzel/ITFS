@@ -12,10 +12,11 @@
   <mat-form-field>
     <input formControlName='delegationNr' matInput name="delegationNr" placeholder="Delegation number">
     <mat-hint>[YYYY/MM/NUM]</mat-hint>
-    <mat-error>Invalid number. It must fulfill following pattern: [YYYY/MM/NUM] </mat-error>
+    <mat-error>Invalid number. It must fulfill following pattern: [YYYY/MM/NUM]</mat-error>
   </mat-form-field>
   <mat-form-field>
     <input formControlName='previousMileage' matInput name="previousMileage" placeholder="Previous mileage">
+    <mat-error></mat-error>
   </mat-form-field>
   <div class="mileage-compl">
     <mat-radio-group formControlName='mileageChoice' value='true' #mileageChoice="matRadioGroup"
@@ -30,10 +31,12 @@
     <div class="mileage-container">
       <mat-form-field>
         <input formControlName='kmTraveled' matInput name="kmTraveled" placeholder="Kilometers traveled">
-      </mat-form-field>
+    <mat-error>Digits only</mat-error>
+  </mat-form-field>
       <mat-form-field>
         <input formControlName='actualMileage' matInput name="actualMileage" placeholder="Actual mileage">
-      </mat-form-field>
+    <mat-error>Digits only</mat-error>
+  </mat-form-field>
     </div>
   </div>
   <mat-form-field>

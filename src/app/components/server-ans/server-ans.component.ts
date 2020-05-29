@@ -7,7 +7,6 @@ import { Component, OnInit, ElementRef, Input, OnChanges, SimpleChanges } from '
 })
 export class ServerAnsComponent implements OnInit, OnChanges {
   color: string;
-  @Input() alarm = false;
   @Input() status: boolean;
   @Input() message: boolean;
 

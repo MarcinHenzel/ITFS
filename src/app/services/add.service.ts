@@ -31,15 +31,15 @@ export class AddService {
     if (validation) {
       server.answer = 'All fields are required';
       server.status = false;
-    } else {
-      this.http.post(`${environment.apiUrl}/${url}`, body).subscribe(res => {
-        server.status = true;
-        server.answer = 'Record has been added succesfully';
-      }, err => {
-        server.answer = `${err}`;
-        server.status = false;
-      });
+      return server;
     }
+    this.http.post(`${environment.apiUrl}/${url}`, body).subscribe(res => {
+      server.status = true;
+      server.answer = 'Record has been added succesfully';
+    }, err => {
+      server.answer = `${err}`;
+      server.status = false;
+    });
     return server;
   }
 }

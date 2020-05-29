@@ -23,15 +23,6 @@ export class AlarmComponent implements OnInit {
     this.onSubmit('sendFireAlarm');
   }
   onSubmit(func) {
-    if (this.alarmForm.invalid) {
-      this.server.status = 'Message is required';
-      return;
-    }
-    this.alarmService[func](this.alarmForm.value).subscribe(res => {
-      this.server.status = true;
-    }, err => {
-      this.server.answer = `${err}`;
-      this.server.status = false;
-    });
+    this.server = this.alarmService[func](this.alarmForm.value, this.alarmForm.invalid);
   }
 }

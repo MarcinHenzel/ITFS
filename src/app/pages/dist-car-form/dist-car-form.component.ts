@@ -16,11 +16,11 @@ export class DistCarFormComponent implements OnInit, OnDestroy {
   costsList$;
   distCarForm: FormGroup = this.formBuilder.group({
     registrationNr: new FormControl('', [Validators.required]),
-    delegationNr:  new FormControl('', [Validators.required, Validators.pattern('[0-9]{4}\/[0-9]{2}\/.*')]),
-    previousMileage:  new FormControl('', [Validators.required]),
+    delegationNr:  new FormControl('', [Validators.required, Validators.pattern('[0-9]{4}\/[0-9]{1,2}\/.+')]),
+    previousMileage:  new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
     mileageChoice:  new FormControl('true', [Validators.required]),
-    kmTraveled: new FormControl('', [Validators.required]),
-    actualMileage:  new FormControl({value: '', disabled: true}, [Validators.required]),
+    kmTraveled: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
+    actualMileage:  new FormControl({value: '', disabled: true}, [Validators.required, Validators.pattern('[0-9]+')]),
     costs:  new FormControl('', [Validators.required]),
     comment:  new FormControl('')
   })

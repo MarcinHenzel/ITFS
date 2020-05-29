@@ -5,12 +5,27 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AlarmService {
-
   constructor(private http: HttpClient) { }
-  sendMessage(mes) {
-    return this.http.post(`${environment.apiUrl}/sendMessage`, mes);
+  sendMessage(mes, validation) {
+    return this.send(mes, 'sendMessage', validation);
   }
-  sendFireAlarm(mes) {
-    return this.http.post(`${environment.apiUrl}/sendfireAlarm`, mes);
+  sendFireAlarm(mes, validation) {
+    return this.send(mes, 'sendFireAlarm', validation);
+  }
+  private send(body, url, validation) {
+    const server: any = {};
+    if (validation) {
+      server.answer = 'Message content is required';
+      server.status = false;
+      return server;
+    }
+    this.http.post(`${environment.apiUrl}/${url}`, body).subscribe(res => {
+      server.status = true;
+      server.answer = 'Message has been sent succesfully';
+    }, err => {
+      server.answer = `${err}`;
+      server.status = false;
+    });
+    return server;
   }
 }

@@ -9,6 +9,6 @@
 </form>
 <div class="buttons-container">
   <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send</button>
-  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendPPOZ-btn">Send Alarm PPOZ</button>
+  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendAlarm-btn">Send Alarm</button>
 </div>
-<app-server-ans  [alarm]='true' [status]='server.status' ></app-server-ans>
+<app-server-ans  [status]='server.status' [message]='server.answer'></app-server-ans>
