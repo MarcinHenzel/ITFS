@@ -4,9 +4,9 @@ Angular v9 frontend.
 
 ## Init node modules
 
-Go to /ITPS folder and run `npm init`.
+Go to /ITPS folder and run `npm install`.
 
-Go to ITPS/server and run `npm init` if you want to mock backend and test requests.
+Go to ITPS/server and run `npm install` if you want to mock backend and test requests.
 
 ## Development server
 
