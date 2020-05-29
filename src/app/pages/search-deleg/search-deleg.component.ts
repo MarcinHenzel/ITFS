@@ -1,6 +1,6 @@
 import { DelegationData } from '../../models/DelegationData';
-import { SearchBarComponent } from './../../components/search-bar/search-bar.component';
-import { SearchService } from './../../services/search.service';
+import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { SearchService } from '../../services/search.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -20,10 +20,10 @@ var ELEMENT_DATA: DelegationData[] = [
 ];
 @Component({
   selector: 'app-deleg-view',
-  templateUrl: './deleg-view.component.html',
-  styleUrls: ['./deleg-view.component.scss']
+  templateUrl: './search-deleg.component.html',
+  styleUrls: ['./search-deleg.component.scss']
 })
-export class DelegViewComponent implements OnInit {
+export class SearchDelegComponent implements OnInit {
   @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
 
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];

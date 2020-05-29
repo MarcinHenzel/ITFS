@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DistCarFormComponent } from './dist-car-form.component';
+import { SearchDelegComponent } from './search-deleg.component';
 
-describe('DistCarFormComponent', () => {
-  let component: DistCarFormComponent;
-  let fixture: ComponentFixture<DistCarFormComponent>;
+describe('DelegViewComponent', () => {
+  let component: SearchDelegComponent;
+  let fixture: ComponentFixture<SearchDelegComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DistCarFormComponent ]
+      declarations: [ SearchDelegComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DistCarFormComponent);
+    fixture = TestBed.createComponent(SearchDelegComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

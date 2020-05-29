@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AddMileageComponent } from './add-mileage.component';
 
-import { DelegViewComponent } from './deleg-view.component';
-
-describe('DelegViewComponent', () => {
-  let component: DelegViewComponent;
-  let fixture: ComponentFixture<DelegViewComponent>;
+describe('DistCarFormComponent', () => {
+  let component: AddMileageComponent;
+  let fixture: ComponentFixture<AddMileageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DelegViewComponent ]
+      declarations: [ AddMileageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DelegViewComponent);
+    fixture = TestBed.createComponent(AddMileageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

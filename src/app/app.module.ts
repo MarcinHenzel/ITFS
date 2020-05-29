@@ -9,8 +9,8 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SearchCarComponent } from './pages/search-car/search-car.component';
 import { AlarmComponent } from './pages/alarm/alarm.component';
-import { DistCarFormComponent } from './pages/dist-car-form/dist-car-form.component';
-import { DelegViewComponent } from './pages/deleg-view/deleg-view.component';
+import { AddMileageComponent } from './pages/add-mileage/add-mileage.component';
+import { SearchDelegComponent } from './pages/search-deleg/search-deleg.component';
 import { AddDelegFormComponent } from './pages/add-deleg-form/add-deleg-form.component';
 import { AddOfficeFormComponent } from './pages/add-office-form/add-office-form.component';
 import { SearchWindowsFormComponent } from './pages/search-windows-form/search-windows-form.component';
@@ -34,8 +34,8 @@ import { ServerAnsComponent } from './components/server-ans/server-ans.component
     HomePageComponent,
     SearchCarComponent,
     AlarmComponent,
-    DistCarFormComponent,
-    DelegViewComponent,
+    AddMileageComponent,
+    SearchDelegComponent,
     AddDelegFormComponent,
     AddOfficeFormComponent,
     SearchWindowsFormComponent,
