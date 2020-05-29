@@ -22,7 +22,7 @@ const ELEMENT_DATA: WindowsData[] = [
   styleUrls: ['./search-windows-form.component.scss']
 })
 export class SearchWindowsFormComponent implements OnInit {
-  @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
+  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
   displayedColumns: string[] = ['Pc Name', 'System Name', 'Activation Date'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchWindows: FormGroup = this.formBuilder.group({

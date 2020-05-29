@@ -22,7 +22,7 @@ const ELEMENT_DATA: OfficeData[] = [
   styleUrls: ['./search-office-form.component.scss']
 })
 export class SearchOfficeFormComponent implements OnInit {
-  @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
+  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
   displayedColumns: string[] = ['date', 'pcName', 'key', 'version'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchOffice: FormGroup = this.formBuilder.group({

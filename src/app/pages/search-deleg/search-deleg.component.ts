@@ -24,7 +24,7 @@ var ELEMENT_DATA: DelegationData[] = [
   styleUrls: ['./search-deleg.component.scss']
 })
 export class SearchDelegComponent implements OnInit {
-  @ViewChild(SearchBarComponent, {static: false}) searchBar: SearchBarComponent;
+  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
 
   displayedColumns: string[] = ['Delegation Nr', 'Name', 'Date', 'Destination', 'Delegation place', 'Costs', 'Advance payment', 'Transport'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);

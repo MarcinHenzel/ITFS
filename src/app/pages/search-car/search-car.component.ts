@@ -22,7 +22,7 @@ const ELEMENT_DATA: VehicleData[] = [
   styleUrls: ['./search-car.component.scss']
 })
 export class SearchCarComponent implements OnInit {
-  @ViewChild(SearchBarComponent, { static: false }) searchBar: SearchBarComponent;
+  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
   displayedColumns: string[] = ['Registration Number', 'Delegation Number', 'Mileage', 'Costs'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchCar: FormGroup = this.formBuilder.group({
