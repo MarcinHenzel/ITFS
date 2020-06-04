@@ -9,6 +9,6 @@ export class SearchService {
   constructor(private http: HttpClient) {
   }
   getData(value, {lookFor, by}) {
-    return this.http.get(`${environment.apiUrl}/search-${lookFor}/`, {params: {value, by}});
+    return this.http.get(`/api/search-${lookFor}`, {params: {value, by}});
   }
 }

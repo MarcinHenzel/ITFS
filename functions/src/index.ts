@@ -288,79 +288,78 @@ const express = require("express");
 /* const cors = require('cors'); */
 const admin = require('firebase-admin');
 const app = express();
-const main = express();
+/* const main = express(); */
 /* const PORT = 3000; */
 admin.initializeApp(functions.config().firebase);
 
-/* var corsOptions = {
-  origin: 'http://localhost:4200',
-  optionsSuccessStatus: 200
+/*  var corsOptions = {
+   origin: true
 }
 app.use(cors(corsOptions)); */
-main.use('/Myapi', app);
-main.use(express.json());
-export const webApi = functions.https.onRequest(main);
-app.post('/sendMessage', (req: any, res: any) => {
+/* main.use('/Myapi', app); */
+app.use(express.json());
+
+app.post('/api/sendMessage', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'dsa'});
 })
-app.post('/sendFireAlarm', (req: any, res: any) => {
+app.post('/api/sendFireAlarm', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'fire'});
 })
 
-app.post('/addWindows', (req: any, res: any) => {
+app.post('/api/addWindows', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'dsa'});
 });
-app.post('/addDeleg', (req: any, res: any) => {
+app.post('/api/addDeleg', (req: any, res: any) => {
   res.status(200).send({message: 'dsa'});
 });
-app.post('/addOffice', (req: any, res: any) => {
+app.post('/api/addOffice', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'dsa'});
 });
-app.post('/addMileage', (req: any, res: any) => {
+app.post('/api/addMileage', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'dsa'});
 });
-app.post('/addVehicle', (req: any, res: any) => {
+app.post('/api/addVehicle', (req: any, res: any) => {
   console.log(req.query);
   console.log(req.body);
   res.status(200).send({message: 'dsa'});
 });
 
 
-app.get('/getCosts', (req: any, res: any) => {
+app.get('/api/getCosts', (req: any, res: any) => {
   res.status(200).send(costs);
 });
-app.get('/getRegs', (req: any, res: any) => {
+app.get('/api/getRegs', (req: any, res: any) => {
   res.status(200).send(regs);
 });
-app.get('/getOffices', (req: any, res: any) => {
+app.get('/api/getOffices', (req: any, res: any) => {
   res.status(200).send(offices);
 });
-app.get('/getWindows', (req: any, res: any) => {
+app.get('/api/getWindows', (req: any, res: any) => {
   res.status(200).send(windowses);
 });
-app.get('/search-delegation', (req: any, res: any) => {
+app.get('/api/search-delegation', (req: any, res: any) => {
   console.log(req.query);
   res.status(200).send([...ans, ...ans]);
 });
-app.get('/search-windows', (req: any, res: any) => {
+app.get('/api/search-windows', (req: any, res: any) => {
   console.log(req.query);
   res.status(200).send([...windows, ...windows]);
 });
-app.get('/search-office', (req: any, res: any) => {
+app.get('/api/search-office', (req: any, res: any) => {
   console.log(req.query);
   res.status(200).send([...office, ...office]);
 });
-app.get('/search-vehicle', (req: any, res: any) => {
+app.get('/api/search-vehicle', (req: any, res: any) => {
   console.log(req.query);
   res.status(200).send([...vehicle, ...vehicle]);
 });
@@ -369,3 +368,4 @@ app.get('/search-vehicle', (req: any, res: any) => {
   console.log(`server running on dsaport ${PORT}`);
 });
  */
+export const webApi = functions.https.onRequest(app);

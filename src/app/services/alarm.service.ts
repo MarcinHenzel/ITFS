@@ -19,7 +19,7 @@ export class AlarmService {
       server.status = false;
       return server;
     }
-    this.http.post(`${environment.apiUrl}/${url}`, body).subscribe(res => {
+    this.http.post(`/api/${url}`, body).subscribe(res => {
       server.status = true;
       server.answer = 'Message has been sent succesfully';
     }, err => {
