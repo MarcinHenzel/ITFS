@@ -8,7 +8,7 @@
   </mat-form-field>
 </form>
 <div class="buttons-container">
-  <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send</button>
-  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendAlarm-btn">Send Alarm</button>
+  <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send to mail</button>
+  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendAlarm-btn">Send SMS Alarm</button>
 </div>
 <app-server-ans  [status]='server.status' [message]='server.answer'></app-server-ans>
