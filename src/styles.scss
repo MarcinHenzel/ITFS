@@ -6,12 +6,12 @@ $white: rgb(250,250,250);
   color: $blacktext;
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
+
 html {
-    font-family: Helvetica, sans-serif;
     background-color: rgb(230, 230, 230);
 }
+body { margin: 0; font-family: Roboto, Helvetica, sans-serif; }
 @mixin content-layout {
   width: 100%;
   height: 100%;
@@ -26,5 +26,4 @@ html {
     left: 0px;
     top: 60px; */
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

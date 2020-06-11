@@ -1,26 +1,14 @@
 @import '../../../styles.scss';
 
-@function get-vw($target) {
-  $vw-context: (1300 * 0.01) * 1px;
-  @return ($target / $vw-context) * 1vw;
 
-  // 100vw -> (1440px * 1vw) -> 1440vw
-}
 
 :host {
-  /*   box-shadow: 5px 0 15px rgb(0,0,0,.2); */
   padding: 10px;
   width: 180px;
   height: 360px;
   box-sizing: border-box;
   color: $blacktext;
-  /* position: absolute;
-  left: 0px;
-  top: 60px;
-  margin-bottom: 2px; */
   position: fixed;
-  // 100vw - (1440vw / 19.2)
-  // 100vw - 75vw
   left: calc(((100vw - (1440vw / 19.2)))/2 - 180px);
 }
 
@@ -38,7 +26,6 @@
 
 .header {
   letter-spacing: .6px;
-  /* margin-left: 4px; */
   font-weight: 700;
   margin: 10px 0 8px 0;
   line-height: 0;
