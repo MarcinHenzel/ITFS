@@ -4,31 +4,21 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { WindowsData } from 'src/app/models/WindowsData';
 
-const ELEMENT_DATA: WindowsData[] = [
-  {pcName: 'Hydrogen', systemName: 'systemName', activationDate: 'H'},
-  {pcName: 'Helium', systemName: 'systemName', activationDate: 'He'},
-  {pcName: 'Lithium', systemName: 'systemName', activationDate: 'Li'},
-  {pcName: 'Beryllium', systemName: 'systemName', activationDate: 'Be'},
-  {pcName: 'Boron', systemName: 'systemName', activationDate: 'B'},
-  {pcName: 'Carbon', systemName: 'systemName', activationDate: 'C'},
-  {pcName: 'Nitrogen', systemName: 'systemName', activationDate: 'N'},
-  {pcName: 'Oxygen', systemName: 'systemName', activationDate: 'O'},
-  {pcName: 'Fluorine', systemName: 'systemName', activationDate: 'F'},
-  {pcName: 'Neon', systemName: 'systemName', activationDate: 'Ne'},
-];
+
 @Component({
   selector: 'app-search-windows-form',
   templateUrl: './search-windows-form.component.html',
   styleUrls: ['./search-windows-form.component.scss']
 })
 export class SearchWindowsFormComponent implements OnInit {
-  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
+  dataSource: any;
   displayedColumns: string[] = ['Pc Name', 'System Name', 'Activation Date'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
   searchWindows: FormGroup = this.formBuilder.group({
     search: ''
   })
   sort = {lookFor: 'windows', by: 'NAME'};
+  @ViewChild(SearchBarComponent) searchBar: SearchBarComponent;
+
   constructor(private formBuilder: FormBuilder) { }
   ngOnInit() {
   }
