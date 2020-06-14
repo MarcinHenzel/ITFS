@@ -2,6 +2,8 @@
 
 Angular v9 frontend.
 
+https://itfs-cfcd9.web.app 
+
 ## Init node modules
 
 Go to /ITPS folder and run `npm install`.
@@ -19,4 +21,5 @@ To mock backend go to ITPS/server and run `npm start`.
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 
-
+## Firebase Functions Branch
+Version for firebase dynamic hosting
