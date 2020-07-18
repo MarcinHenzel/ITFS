@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 100%;
+
+}
+main {
+  display: grid;
+  grid-template-columns:200px 1fr;
+}
+.animation-container > * {
+  position: absolute;
+}

@@ -2,17 +2,17 @@
 
 
 
-:host {
-  padding: 10px;
+ :host {
+/*   padding: 10px;
   width: 180px;
   height: 360px;
   box-sizing: border-box;
   color: $blacktext;
   position: fixed;
-  left: calc(((100vw - (1440vw / 19.2)))/2 - 180px);
+  left: calc(((100vw - (1440vw / 19.2)))/2 - 180px); */
 }
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   :host {
     left: calc((100vw - 65vw)/2 - 180px);
   }
@@ -22,7 +22,7 @@
   :host {
     display: none;
   }
-}
+} */
 
 .header {
   letter-spacing: .6px;

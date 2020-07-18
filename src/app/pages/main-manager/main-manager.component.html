@@ -1,0 +1,9 @@
+<!-- <ng-container [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" > -->
+  <app-section-name [outletData]="o.activatedRouteData"></app-section-name>
+<!-- </ng-container> -->
+<main>
+  <app-navlist ></app-navlist>
+  <div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" class="animation-container">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</main>
