@@ -1,14 +1,8 @@
 @import "../../../styles.scss";
 
-:host {
-    @include content-layout;
-}
+
 .add-windows-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
+  @include add-form-layout;
 }
 mat-form-field, .send-btn {
     margin: 3px 0;

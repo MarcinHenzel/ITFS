@@ -7,19 +7,21 @@ $white: rgb(250,250,250);
   padding: 0;
   margin: 0;
 }
-
+* {
+  box-sizing: border-box;
+}
 html {
     background-color: rgb(230, 230, 230);
     font-size: 16px;
 }
-body { margin: 0; font-family: Roboto, Helvetica, sans-serif; }
-@mixin content-layout {
-  width: 100%;
-  height: 100%;
+body { margin: 0; font-family: Roboto, Helvetica, sans-serif; overflow-x:hidden }
+@mixin add-form-layout{
   display: flex;
-  align-items: center;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  width: 100%;
+}
+@mixin content-layout {
 
 }
 @mixin navlist-position {
@@ -28,3 +30,8 @@ body { margin: 0; font-family: Roboto, Helvetica, sans-serif; }
     top: 60px; */
 }
 
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}

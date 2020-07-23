@@ -1,3 +1,5 @@
+$navlistWidth: 170px;
+
 :host {
   display: block;
   width: 100%;
@@ -5,8 +7,26 @@
 }
 main {
   display: grid;
-  grid-template-columns:200px 1fr;
+  grid-template-columns:$navlistWidth 1fr;
+  padding-left: 10px;
 }
-.animation-container > * {
+app-navlist {
+  z-index: 2;
+}
+.animation-container  {
+  position: relative;
+}
+:host ::ng-deep router-outlet ~ * {
   position: absolute;
+  width: 100%;
+}
+@media(max-width: 1023px) {
+  app-navlist {
+    display:none;
+  }
+  main {
+    grid-template-columns: 1fr;
+    padding-left: 0;
+
+  }
 }

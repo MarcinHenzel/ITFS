@@ -1,12 +1,8 @@
 @import "../../../styles.scss";
 
-:host {
-    @include content-layout;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.add-delegation-form{
+  @include add-form-layout;
 }
 .input-container {
   display: flex;

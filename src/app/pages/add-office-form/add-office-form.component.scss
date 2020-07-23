@@ -1,24 +1,11 @@
 @import "../../../styles.scss";
 
-:host {
-    @include content-layout;
-    position: relative;
-}
+
 .add-office-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
+  @include add-form-layout;
 }
 mat-form-field, .send-btn {
     margin: 3px 0;
     width: 40%;
 
-}
-app-navlist{
-/*   position: absolute;
-  left: 0px;
-  top: 50px; */
-  @include navlist-position;
 }

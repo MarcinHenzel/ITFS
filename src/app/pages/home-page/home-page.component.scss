@@ -5,13 +5,12 @@
   width: 100%;
   flex-direction: column;
   align-items: center;
-}
-.header-container {
   padding: 5px;
 }
-h1 {
-  display: inline-block;
-/*   text-justify: center; */
+
+header{
+  margin: 15px;
+  text-align: center;
   text-shadow:
     2px 2px white,
     2px -2px white,
@@ -21,24 +20,15 @@ h1 {
   color: $blacktext;
   font-size: 2.7rem;
   text-decoration: underline $logocolor;
+  font-weight: 500;
 }
-
-
-@media (max-width: 1439px) and (min-width: 1023px) {
-
-/*   h1 {
-    font-size: 2.5vw;
+@media (max-width: 767px) {
+  header {
     text-shadow:
-    2px 2px white,
-    2px -2px white,
-    -2px 2px white,
-    -2px -2px white;
-  } */
+    1px 1px white,
+    1px -1px white,
+    -1px 1px white,
+    -1px -1px white;
+  }
 
 }
-/* @media (max-width: 1023px) {
-  h1 {
-    font-size: 3vw;
-    text-shadow: none;
-  }
-} */

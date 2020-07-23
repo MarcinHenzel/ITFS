@@ -5,23 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { InfoComponent } from './pages/info/info.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { MenuCircleBtnComponent } from './components/menu-circle-btn/menu-circle-btn.component';
+import { IconButtonComponent } from './components/icon-button/icon-button.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { InfoComponent } from './pages/info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    InfoComponent,
-    MenuCircleBtnComponent,
+    IconButtonComponent,
     CardListComponent,
-
+    AboutusComponent,
+    InfoComponent
   ],
   imports: [
     MaterialModule,

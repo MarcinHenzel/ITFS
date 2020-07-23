@@ -17,16 +17,16 @@ const routes: Routes = [
   {
     path: '', component: MainManagerComponent,
     children: [
-      { path: 'add-office', component: AddOfficeFormComponent, data: {title: 'Add office'} },
-      { path: 'deleg-view', component: SearchDelegComponent, data: {title: 'Search delegation'} },
-      { path: 'search-office', component: SearchOfficeFormComponent, data: {title: 'Search office'} },
-      { path: 'add-windows', component: AddWindowsComponent, data: {title: 'Add windows'} },
-      { path: 'search-windows', component: SearchWindowsFormComponent, data: {title: 'Search windows'} },
-      { path: 'add-deleg', component: AddDelegFormComponent, data: {title: 'Add delegation'}},
-      { path: 'search-car', component: SearchCarComponent, data: {title: 'Search vehicle'} },
-      { path: 'dist-car', component: AddMileageComponent, data: {title: 'Add mileage'} },
-      { path: 'alarm', component: AlarmComponent, data: {title: 'Alarm'} },
-      { path: 'add-car', component: AddCarComponent, data: {title: 'Add vehicle'}  },
+      { path: 'add-office', component: AddOfficeFormComponent, data: {title: 'Add office', animation: 'Addoffice'} },
+      { path: 'deleg-view', component: SearchDelegComponent, data: {title: 'Search delegation', animation: 'Searchdelegation'} },
+      { path: 'search-office', component: SearchOfficeFormComponent, data: {title: 'Search office', animation: 'Searchoffice'} },
+      { path: 'add-windows', component: AddWindowsComponent, data: {title: 'Add windows', animation: 'Addwindows'} },
+      { path: 'search-windows', component: SearchWindowsFormComponent, data: {title: 'Search windows', animation: 'Searchwindows'} },
+      { path: 'add-deleg', component: AddDelegFormComponent, data: {title: 'Add delegation', animation: 'Adddelegation'}},
+      { path: 'search-car', component: SearchCarComponent, data: {title: 'Search vehicle', animation: 'Searchvehicle'} },
+      { path: 'dist-car', component: AddMileageComponent, data: {title: 'Add mileage', animation: 'Addmileage'} },
+      { path: 'alarm', component: AlarmComponent, data: {title: 'Alarm', animation: 'Alarm'} },
+      { path: 'add-car', component: AddCarComponent, data: {title: 'Add vehicle', animation: 'Addvehicle'}  },
     ]
   }
 ];

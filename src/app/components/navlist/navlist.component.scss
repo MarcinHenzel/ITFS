@@ -1,15 +1,8 @@
 @import '../../../styles.scss';
 
-
-
  :host {
-/*   padding: 10px;
-  width: 180px;
-  height: 360px;
-  box-sizing: border-box;
-  color: $blacktext;
-  position: fixed;
-  left: calc(((100vw - (1440vw / 19.2)))/2 - 180px); */
+  box-shadow: 5px 0px 3px -3px rgba(0, 0, 0, 0.192);
+
 }
 
 /* @media (max-width: 1440px) {

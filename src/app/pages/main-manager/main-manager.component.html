@@ -3,7 +3,7 @@
 <!-- </ng-container> -->
 <main>
   <app-navlist ></app-navlist>
-  <div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" class="animation-container">
-    <router-outlet #o="outlet"></router-outlet>
+  <div [@fadeAnimation]="returnOutlet(o)" class="animation-container">
+      <router-outlet #o="outlet"></router-outlet>
   </div>
 </main>
