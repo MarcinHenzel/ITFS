@@ -4,7 +4,11 @@
 .add-windows-form {
   @include add-form-layout;
 }
-mat-form-field, .send-btn {
-    margin: 3px 0;
-    width: 40%;
+mat-form-field {
+    margin: 5px 0;
+    width: clamp(300px, 95%, 700px);
+}
+.send-btn {
+  margin: 5px 0;
+  width: clamp(150px, 45%, 350px);
 }

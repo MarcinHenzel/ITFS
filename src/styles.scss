@@ -24,12 +24,12 @@ body { margin: 0; font-family: Roboto, Helvetica, sans-serif; overflow-x:hidden 
 @mixin content-layout {
 
 }
-@mixin navlist-position {
-/*   position: absolute;
-    left: 0px;
-    top: 60px; */
-}
 
+@media (max-width: 1023px) {
+  html {
+    font-size: 14px;
+  }
+}
 @media (max-width: 767px) {
   html {
     font-size: 12px;

@@ -12,7 +12,7 @@
   padding: 10px;
 }
 mat-form-field, .send-btn, .payment-container {
-  width: 40%;
+  width: 45%;
   margin: 0 3px;
 }
 .payment-container {
@@ -28,3 +28,9 @@ mat-form-field, .send-btn, .payment-container {
   flex:3;
 }
 
+@media (max-width: 767px) {
+  mat-form-field,  .payment-container {
+    width: 95%;
+    max-width: 500px;
+  }
+}
