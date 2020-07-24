@@ -1,26 +1,19 @@
 :host{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-height: 100vh;
   padding:0;
   margin: 0;
-/*   overflow-x: hidden; */
 }
 
 .container{
-/*     margin-left: auto;
-    margin-right: auto; */
-    align-self: center;
     background-color: rgb(250, 250, 250);
-    flex:1;
     width: 1440px;
     display:flex;
+    justify-self: center;
     align-items:stretch;
     justify-content: stretch;
 }
-/* router-outlet ~ * {
-  position: absolute;
-} */
 @media (max-width: 1439px) {
   .container {
     width: 100vw;

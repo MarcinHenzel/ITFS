@@ -8,7 +8,8 @@
   padding: 5px;
 }
 
-header{
+header {
+  font-size: 2.7rem;
   margin: 15px;
   text-align: center;
   text-shadow:
@@ -18,17 +19,20 @@ header{
     -2px -2px white;
   letter-spacing: 2px;
   color: $blacktext;
-  font-size: 2.7rem;
   text-decoration: underline $logocolor;
   font-weight: 500;
 }
+
 @media (max-width: 767px) {
   header {
+    letter-spacing: 1px;
+    margin-top: 5px;
+    font-size: 2rem;
     text-shadow:
-    1px 1px white,
-    1px -1px white,
-    -1px 1px white,
-    -1px -1px white;
+      1px 1px white,
+      1px -1px white,
+      -1px 1px white,
+      -1px -1px white;
   }
 
 }

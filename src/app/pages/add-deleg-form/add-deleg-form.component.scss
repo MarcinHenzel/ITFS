@@ -17,16 +17,18 @@ mat-form-field, .send-btn, .payment-container {
 }
 .payment-container {
   display: flex;
+  flex-wrap: wrap;
+  .currency-select {
+    flex: 1;
+  }
+  .currency {
+    flex:3;
+  }
 }
 .send-btn {
   margin-bottom: 5px;
 }
-.currency-select {
-  flex: 1;
-}
-.currency {
-  flex:3;
-}
+
 
 @media (max-width: 767px) {
   mat-form-field,  .payment-container {

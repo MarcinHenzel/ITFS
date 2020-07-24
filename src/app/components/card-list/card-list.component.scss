@@ -17,7 +17,7 @@
   max-height: 80%;
   flex-wrap: wrap;
   width: 33vw;
-  padding: 0 1% 1% 1%;
+  padding: 0 5px 5px 5px;
   background-color: #222;
   border-radius: 10px;
   box-shadow: -5px 0 2rem rgba(0, 0, 0, 0.493);
@@ -129,9 +129,6 @@ app-icon-button {
     text-align: center;
     transition: all .3s ease-in-out;
 
-/*     &:first-line {
-      font-size: 1.5rem;
-    } */
   }
 
   &:hover {
@@ -146,25 +143,7 @@ app-icon-button {
 
 }
 
-/* @media (max-width: 1439px) and (min-width: 1023px) {
-  .card {
-    width: 24vw;
-  }
-  app-menu-circle-btn {
-    font-size: 1.2vw;
-  }
-}
-@media (max-width: 1023px) {
-  app-menu-circle-btn {
-    font-size: 1.5vw;
-  }
-  .card {
-    width: 30vw;
-  }
-}
- */
  @media  (max-width: 767px) {
-  /* start of medium tablet styles */
     :host {
       flex-direction: column;
       height: 170vh;
@@ -173,8 +152,9 @@ app-icon-button {
       width: 90%;
       max-width: 500px;
       margin-bottom: 10px;
+      box-shadow: none;
       &:not(:first-child) {
-        box-shadow: -25px 0 2rem rgba(0, 0, 0, 0.493);
+        box-shadow: none;
         margin-left: 0;
       }
 
@@ -187,12 +167,5 @@ app-icon-button {
         transition: none;
       }
     }
-/*     .card:hover {
-      transform: none;
 
-    }
-    .card:hover~.card {
-      left:0;
-      transition: none;
-    } */
   }
