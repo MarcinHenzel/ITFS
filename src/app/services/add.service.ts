@@ -33,7 +33,7 @@ export class AddService {
       server.status = false;
       return server;
     }
-    this.http.post(`${environment.apiUrl}/${url}`, body).subscribe(res => {
+    this.http.post(`/api/${url}`, body).subscribe(res => {
       server.status = true;
       server.answer = 'Record has been added succesfully';
     }, err => {

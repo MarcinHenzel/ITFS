@@ -1,5 +1,4 @@
-<app-section-name>Add mileage</app-section-name>
-<app-navlist></app-navlist>
+
 <form [formGroup]='distCarForm' (ngSubmit)='onSubmit()' class="add-mileage-form" action="">
   <mat-form-field>
     <mat-label>Registration</mat-label>
@@ -51,6 +50,6 @@
     <mat-label>Comment</mat-label>
     <textarea formControlName='comment' matInput></textarea>
   </mat-form-field>
-  <button type="submit" class="send-btn" mat-raised-button id="add-btn">Add</button>
+  <button type="submit" class="send-btn" mat-raised-button >Add</button>
 </form>
 <app-server-ans [status]='server.status' [message]='server.answer'></app-server-ans>

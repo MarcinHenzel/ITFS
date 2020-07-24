@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuCircleBtnComponent } from './menu-circle-btn.component';
+import { MainManagerComponent } from './main-manager.component';
 
-describe('MenuCircleBtnComponent', () => {
-  let component: MenuCircleBtnComponent;
-  let fixture: ComponentFixture<MenuCircleBtnComponent>;
+describe('MainManagerComponent', () => {
+  let component: MainManagerComponent;
+  let fixture: ComponentFixture<MainManagerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuCircleBtnComponent ]
+      declarations: [ MainManagerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuCircleBtnComponent);
+    fixture = TestBed.createComponent(MainManagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

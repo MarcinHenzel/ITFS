@@ -1,16 +1,10 @@
 @import "../../../styles.scss";
 
-:host {
-    @include content-layout;
-}
+
 .add-car-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    width: 100%;
+  @include add-form-layout;
 }
 mat-form-field, .send-btn {
-    margin: 3px 0;
-    width: 40%;
+    margin: 5px 0;
+    width: clamp(300px, 95%, 700px);
 }

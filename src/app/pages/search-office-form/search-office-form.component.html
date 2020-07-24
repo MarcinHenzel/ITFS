@@ -1,11 +1,4 @@
-<app-section-name>Search office</app-section-name>
-<app-navlist></app-navlist>
 
-<!-- <form [formGroup]="searchOffice" class="search-form">
-  <div class="search-bar">
-    <input formControlName='search' matInput  placeholder="Search">
-  </div>
-</form> -->
 <app-search-bar (tableData)='updateTable($event)' [sort]='sort'></app-search-bar>
 
 <mat-tab-group mat-align-tabs='center' (selectedTabChange)="setSort($event)">
@@ -64,7 +57,6 @@
     </table>
   </mat-tab>
   <mat-tab label="By Registration mail">
-    <!-- <mat-form-field><input matInput placeholder="Registration mail"></mat-form-field> -->
     <div class="table-container">
       <mat-form-field class="filter">
         <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="Filter">

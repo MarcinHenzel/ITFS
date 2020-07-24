@@ -1,14 +1,15 @@
-<app-section-name>Alarm</app-section-name>
-<app-navlist></app-navlist>
-<form [formGroup]="alarmForm" class="alarm-form">
-  <mat-form-field class="message-field">
-    <textarea formControlName="message" class="communique" name="message" id="message-input" rows="5" matInput #message maxlength="512"
-      placeholder="Message" placeholder="Message content"></textarea>
-    <mat-hint align="end">{{message.value.length}} / 512</mat-hint>
-  </mat-form-field>
-</form>
-<div class="buttons-container">
-  <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send</button>
-  <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendAlarm-btn">Send Alarm</button>
+<div class="con">
+  <form [formGroup]="alarmForm" class="alarm-form">
+    <mat-form-field class="message-field">
+      <textarea formControlName="message" class="communique" name="message" id="message-input" rows="5" matInput #message maxlength="512"
+        placeholder="Message" placeholder="Message content"></textarea>
+      <mat-hint align="end">{{message.value.length}} / 512</mat-hint>
+    </mat-form-field>
+  </form>
+  <div class="buttons-container">
+    <button (click)="send()" class="send-btn" mat-raised-button id="send-btn">Send to mail</button>
+    <button (click)="sendFireAlarm()" class="send-btn" mat-raised-button color="accent" id="sendAlarm-btn">Send SMS Alarm</button>
+  </div>
+  <app-server-ans  [status]='server.status' [message]='server.answer'></app-server-ans>
+
 </div>
-<app-server-ans  [status]='server.status' [message]='server.answer'></app-server-ans>

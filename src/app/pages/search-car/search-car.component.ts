@@ -38,4 +38,3 @@ export class SearchCarComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
-

@@ -1,30 +1,53 @@
 $blacktext : rgb(34, 34, 34);
 $logocolor: rgb(255, 159, 25);
-$white: rgb(250,250,250);
+$white: rgb(250, 250, 250);
+
 *:before,
 *:after {
   color: $blacktext;
   padding: 0;
   margin: 0;
+}
+
+* {
   box-sizing: border-box;
 }
-html {
-    font-family: Helvetica, sans-serif;
-    background-color: rgb(230, 230, 230);
-}
-@mixin content-layout {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
 
+html {
+  background-color: rgb(230, 230, 230);
+  font-size: 16px;
 }
-@mixin navlist-position {
-/*   position: absolute;
-    left: 0px;
-    top: 60px; */
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  overflow-x: hidden
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@mixin add-form-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 1023px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}

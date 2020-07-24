@@ -1,23 +1,22 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { environment } from './../../environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
 export class InitDataService {
 
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:3000';
   getCosts() {
-    return this.http.get(`${this.baseUrl}/getCosts`);
+    return this.http.get(`/api/getCosts`);
   }
   getRegs() {
-    return this.http.get(`${this.baseUrl}/getRegs`);
+    return this.http.get(`/api/getRegs`);
   }
   getOffices() {
-    return this.http.get(`${this.baseUrl}/getOffices`);
+    return this.http.get(`/api/getOffices`);
   }
   getWindows() {
-    return this.http.get(`${this.baseUrl}/getWindows`);
+    return this.http.get(`/api/getWindows`);
   }
 }

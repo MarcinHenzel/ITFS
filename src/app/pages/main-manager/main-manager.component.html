@@ -1,0 +1,7 @@
+  <app-section-name [outletData]="o.activatedRouteData"></app-section-name>
+<main>
+  <app-navlist ></app-navlist>
+  <div [@fadeAnimation]="returnOutlet(o)" class="animation-container">
+      <router-outlet #o="outlet"></router-outlet>
+  </div>
+</main>
