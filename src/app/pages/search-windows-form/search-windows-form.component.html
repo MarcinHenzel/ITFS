@@ -1,9 +1,4 @@
 
-<!-- <form [formGroup]="searchWindows" class="search-form">
-  <div class="search-bar">
-    <input formControlName='search' matInput placeholder="Search">
-  </div>
-</form> -->
 <app-search-bar (tableData)='updateTable($event)' [sort]='sort'></app-search-bar>
 <mat-tab-group mat-align-tabs='center' (selectedTabChange)="setSort($event)">
   <mat-tab label="By Pc Name" >

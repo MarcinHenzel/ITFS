@@ -1,9 +1,13 @@
 @import "../../../styles.scss";
 
+:host {
+  background-color: $white;
+}
 
-.add-delegation-form{
+.add-delegation-form {
   @include add-form-layout;
 }
+
 .input-container {
   display: flex;
   flex-wrap: wrap;
@@ -11,27 +15,35 @@
   justify-content: center;
   padding: 10px;
 }
-mat-form-field, .send-btn, .payment-container {
+
+mat-form-field,
+.send-btn,
+.payment-container {
   width: 45%;
   margin: 0 3px;
 }
+
 .payment-container {
   display: flex;
   flex-wrap: wrap;
+
   .currency-select {
     flex: 1;
   }
+
   .currency {
-    flex:3;
+    flex: 3;
   }
 }
+
 .send-btn {
   margin-bottom: 5px;
 }
 
-
 @media (max-width: 767px) {
-  mat-form-field,  .payment-container {
+
+  mat-form-field,
+  .payment-container {
     width: 95%;
     max-width: 500px;
   }

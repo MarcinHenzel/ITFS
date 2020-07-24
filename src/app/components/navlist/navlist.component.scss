@@ -1,21 +1,8 @@
 @import '../../../styles.scss';
 
- :host {
+:host {
   box-shadow: 5px 0px 3px -3px rgba(0, 0, 0, 0.192);
-
 }
-
-/* @media (max-width: 1440px) {
-  :host {
-    left: calc((100vw - 65vw)/2 - 180px);
-  }
-}
-
-@media (max-width: 1023px) {
-  :host {
-    display: none;
-  }
-} */
 
 .header {
   letter-spacing: .6px;
@@ -25,7 +12,6 @@
   display: block;
   height: 12px;
   border-bottom: 1px solid $blacktext;
-
 }
 
 ul {
@@ -35,6 +21,8 @@ ul {
 }
 
 li {
+  @include no-select;
+  outline: none;
   cursor: pointer;
   margin: 3px 0 3px 6px;
   letter-spacing: .6px;

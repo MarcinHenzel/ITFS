@@ -7,7 +7,6 @@ import {
   group
 } from '@angular/animations';
 
-import { fadeAnimation } from './fadeInOutPages';
 import { Component, OnInit, } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 @Component({
@@ -31,8 +30,6 @@ import { RouterOutlet } from '@angular/router';
         )
       ])
     ]),
-
-
   ])]
 })
 export class MainManagerComponent implements OnInit {

@@ -1,7 +1,10 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-self: center;
   border-radius: 15px;
   padding: 10px 14px;
   display:none;
@@ -11,17 +14,16 @@
 
 .mes {
   margin: 0;
-  font-size: 15px;
+  font-size: 1.1rem;
   letter-spacing: .7px;
 }
 
 .green {
   display:block;
-
-  background: rgb(144, 204, 144);
+  background: rgb(103, 224, 103);
 }
 
 .red {
   display:block;
-  background: rgb(211, 139, 139);
+  background: rgb(231, 111, 111);
 }

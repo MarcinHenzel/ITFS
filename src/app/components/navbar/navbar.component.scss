@@ -23,6 +23,7 @@
 }
 
 .tab a {
+  @include no-select;
   cursor: pointer;
   font-size: 25px;
   display: block;
@@ -38,9 +39,7 @@
 }
 
 .logo {
-/*   position: absolute;
-  top: 10px;
-  right: 30px; */
+
   margin-right: .5rem;
   width: 8rem;
 }
