@@ -1,11 +1,6 @@
 import * as functions from 'firebase-functions';
 import {ans, windows, office, vehicle, costs, regs, offices, windowses} from './data';
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((req: any,est, res: any)onse) => {
-//  res: any)onse.send("Hello from Firebase!");
-// });
+
 const express = require("express");
 /* const cors = require('cors'); */
 const admin = require('firebase-admin');

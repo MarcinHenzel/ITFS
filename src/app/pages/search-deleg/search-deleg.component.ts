@@ -5,8 +5,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-deleg-view',
   templateUrl: './search-deleg.component.html',
@@ -21,9 +19,8 @@ export class SearchDelegComponent implements OnInit {
     search: ''
   })
   sort = {lookFor: 'delegation', by: 'NAME'};
-  constructor(private formBuilder: FormBuilder, private searchServ: SearchService) { }
+  constructor(private formBuilder: FormBuilder) { }
   ngOnInit() {
-
   }
   setSort(event) {
     switch (event.index) {

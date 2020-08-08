@@ -19,9 +19,6 @@ export class AlarmComponent implements OnInit {
   send() {
     this.onSubmit('sendMessage');
   }
-  sendFireAlarm() {
-    this.onSubmit('sendFireAlarm');
-  }
   onSubmit(func) {
     this.server = this.alarmService[func](this.alarmForm.value, this.alarmForm.invalid);
   }

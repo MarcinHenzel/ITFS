@@ -9,11 +9,9 @@
 }
 
 .container{
-    background-color: $white;
     width: 1440px;
     display:flex;
     justify-self: center;
-
 }
 @media (max-width: 1439px) {
   .container {
