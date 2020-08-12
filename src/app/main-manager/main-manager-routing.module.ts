@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddOfficeFormComponent } from '../add-office-form/add-office-form.component';
-import { SearchDelegComponent } from '../search-deleg/search-deleg.component';
-import { SearchOfficeFormComponent } from '../search-office-form/search-office-form.component';
-import { AddWindowsComponent } from '../add-windows/add-windows.component';
-import { SearchWindowsFormComponent } from '../search-windows-form/search-windows-form.component';
-import { AddDelegFormComponent } from '../add-deleg-form/add-deleg-form.component';
-import { SearchCarComponent } from '../search-car/search-car.component';
-import { AddMileageComponent } from '../add-mileage/add-mileage.component';
-import { AlarmComponent } from '../alarm/alarm.component';
-import { AddCarComponent } from '../add-car/add-car.component';
+import { AddOfficeFormComponent } from '../pages/add-office-form/add-office-form.component';
+import { SearchDelegComponent } from '../pages/search-deleg/search-deleg.component';
+import { SearchOfficeFormComponent } from '../pages/search-office-form/search-office-form.component';
+import { AddWindowsComponent } from '../pages/add-windows/add-windows.component';
+import { SearchWindowsFormComponent } from '../pages/search-windows-form/search-windows-form.component';
+import { AddDelegFormComponent } from '../pages/add-deleg-form/add-deleg-form.component';
+import { SearchCarComponent } from '../pages/search-car/search-car.component';
+import { AddMileageComponent } from '../pages/add-mileage/add-mileage.component';
+import { AlarmComponent } from '../pages/alarm/alarm.component';
+import { AddCarComponent } from '../pages/add-car/add-car.component';
 import { MainManagerComponent } from './main-manager.component';
 
 

@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'aboutus', component: AboutusComponent},
   {
     path: 'manager' ,
-    loadChildren: () => import('../app/pages/main-manager/main-manager.module').then(m => m.MainManagerModule)
+    loadChildren: () => import('../app/main-manager/main-manager.module').then(m => m.MainManagerModule)
   }
 ];
 
